@@ -22,7 +22,10 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'rabl'
+gem 'oj'
 gem 'grape'
+gem 'grape-rabl'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
