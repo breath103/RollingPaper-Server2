@@ -8,7 +8,6 @@ class CreateImageContents < ActiveRecord::Migration
       t.float :rotation
       t.integer :paper_id
       t.integer :user_id
-      t.string :image
     end
   end
 end

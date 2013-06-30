@@ -1,5 +1,6 @@
 RollingPaper::Application.routes.draw do
   mount API => '/api'
+  resources :image_contents, path: '/api/image_contents'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

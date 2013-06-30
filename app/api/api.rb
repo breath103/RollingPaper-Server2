@@ -1,3 +1,4 @@
+require "awesome_print"
 class API < Grape::API
   format :json
   default_format :json
@@ -34,15 +35,32 @@ class API < Grape::API
       paper
     end
     
-    get '/:id/contents' do 
-      paper = Paper.find_by_id(params[:id])
-      paper.contents
-    end
-    
-    
     put '/:id' do
       paper = Paper.find_by_id(params[:id])
       paper
+    end
+    
+    get '/:id/contents', rabl: "paper-contents.rabl" do 
+      paper = Paper.find_by_id(params[:id])
+      @paper = paper
+      @contents = paper.contents
+    end
+    
+    post '/:paper_id/image_contents' do 
+      paper = Paper.find_by_id(params[:paper_id]) 
+      ap params
+      image_content = ImageContent.create(params[:image_content])
+      image_content
+    end
+    
+    get '/:paper_id/image_contents/:image_id' do 
+      paper = Paper.find_by_id(params[:paper_id])
+      image_content = ImageContent.find_by_id(params[:image_id])
+      image_content
+    end
+
+    put '/:paper_id/image_contents/:image_id' do 
+      paper = Paper.find_by_id(params[:paper_id])
     end
   end
   
