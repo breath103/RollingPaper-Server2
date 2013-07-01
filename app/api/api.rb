@@ -9,7 +9,7 @@ class API < Grape::API
     get '/' do
       Paper.all
     end
-    
+
     get '/backgrounds' do
       [
         "http://www.hdwallpapersbest.com/wp-content/uploads/2013/01/colorful_background-wide1.jpg",
@@ -45,22 +45,40 @@ class API < Grape::API
       @paper = paper
       @contents = paper.contents
     end
-    
-    post '/:paper_id/image_contents' do 
-      paper = Paper.find_by_id(params[:paper_id]) 
-      ap params
-      image_content = ImageContent.create(params[:image_content])
-      image_content
+  end
+  
+  resource :sound_contents do
+    get '/:id' do 
+      SoundContent.find_by_id(params[:id])
+	end
+ 	put '/:id' do 
+	  sound_params = params.slice(:user_id, :paper_id, :x, :y ,:width, :height, :rotation)
+	  sound_content = SoundContent.find_by_id(params[:id])
+	  sound_content.update_attributes(sound_params)
+	  sound_content
+	end
+    delete '/:id' do 
+      image_content = ImageContent.find_by_id(params[:id])
+   	  image_content.delete
+	end
+  end
+  
+  resource :image_contents do
+	# implemented in image contents controller
+	# post '/' do 
+	# end 
+    get '/:id' do 
+      ImageContent.find_by_id(params[:id])
     end
-    
-    get '/:paper_id/image_contents/:image_id' do 
-      paper = Paper.find_by_id(params[:paper_id])
-      image_content = ImageContent.find_by_id(params[:image_id])
-      image_content
+    put '/:id' do 
+  	  image_params = params.slice(:user_id, :paper_id, :x, :y ,:width, :height, :rotation)
+  	  image_content = ImageContent.find_by_id(params[:id])
+      image_content.update_attributes(image_params)
+  	  image_content
     end
-
-    put '/:paper_id/image_contents/:image_id' do 
-      paper = Paper.find_by_id(params[:paper_id])
+    delete '/:id' do 
+      image_content = ImageContent.find_by_id(params[:id])
+  	  image_content.delete
     end
   end
   

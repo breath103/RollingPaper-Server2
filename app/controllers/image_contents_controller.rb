@@ -1,4 +1,3 @@
-require 'awesome_print'
 class ImageContentsController < ApplicationController
   respond_to :json
   def create
