@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130630191754) do
+ActiveRecord::Schema.define(:version => 20130701122447) do
 
   create_table "image_contents", :force => true do |t|
     t.float    "x"
@@ -28,6 +28,14 @@ ActiveRecord::Schema.define(:version => 20130630191754) do
     t.datetime "image_updated_at"
   end
 
+  create_table "invitations", :force => true do |t|
+    t.integer  "sender_id"
+    t.integer  "paper_id"
+    t.string   "frined_facebook_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
   create_table "papers", :force => true do |t|
     t.string   "title"
     t.datetime "created_at",         :null => false
@@ -42,6 +50,20 @@ ActiveRecord::Schema.define(:version => 20130630191754) do
   end
 
   add_index "papers", ["creator_id"], :name => "index_papers_on_user_id"
+
+  create_table "sound_contents", :force => true do |t|
+    t.float    "x"
+    t.float    "y"
+    t.float    "width"
+    t.float    "height"
+    t.float    "rotation"
+    t.integer  "paper_id"
+    t.integer  "user_id"
+    t.string   "sound_file_name"
+    t.string   "sound_content_type"
+    t.integer  "sound_file_size"
+    t.datetime "sound_updated_at"
+  end
 
   create_table "tickets", :force => true do |t|
     t.integer  "user_id"
