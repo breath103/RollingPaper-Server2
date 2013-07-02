@@ -38,7 +38,7 @@ gem "awesome_print"
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-gem 'unicorn'
+gem 'unicon'
 
 # Deploy with Capistrano
 # gem 'capistrano'
