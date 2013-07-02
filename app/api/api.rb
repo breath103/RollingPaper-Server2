@@ -87,7 +87,8 @@ class API < Grape::API
       User.all
     end
 
-    post '/auth' do
+    post '/auth.json' do
+      ap params
       user_params = params.slice(
          :username,
          :name, 
@@ -98,7 +99,6 @@ class API < Grape::API
          :facebook_id,
          :facebook_accesstoken
       );
-
       user = User.find_by_facebook_id(user_params[:facebook_id]) if user_params[:facebook_id]
       if !user
         user = User.new(user_params)
@@ -106,15 +106,10 @@ class API < Grape::API
       end
       user
     end 
-
-    get '/:id', :rabl => 'user' do
-      @user = User.find_by_id(params[:id]) if params[:id]
-    end
     
     # "users/%d/received_papers.json",[self id]]
     # "users/%d/participating_papers.json",[self id]]
     # "users/%d/created_papers.json",[self id]]
-    
     get '/:id/participating_papers' do
       user = User.find_by_id(params[:id])
       user.papers
