@@ -1,4 +1,3 @@
-require "awesome_print"
 class API < Grape::API
   format :json
   default_format :json
@@ -92,7 +91,6 @@ class API < Grape::API
     end
 
     post '/authorize' do
-      ap params
       user_params = params.slice(
          :username,
          :name, 
