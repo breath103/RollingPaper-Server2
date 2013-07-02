@@ -30,7 +30,6 @@ gem 'factory_girl_rails'
 gem 'houston'
 gem "paperclip"
 gem "awesome_print"
-gem "thin"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -39,7 +38,7 @@ gem "thin"
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
