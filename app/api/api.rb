@@ -91,7 +91,7 @@ class API < Grape::API
       User.all
     end
 
-    post '/auth' do
+    post '/authorize' do
       ap params
       user_params = params.slice(
          :username,
