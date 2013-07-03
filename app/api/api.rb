@@ -19,7 +19,8 @@ class API < Grape::API
     
     post '/' do
       paper_params = params.slice( :creator_id, :title, :width, :height, :notice, 
-                                   :receive_time, :created_time, :friend_facebook_id, :background );
+                                   :receive_time, :created_time, :friend_facebook_id, 
+                                   :background );
       paper = Paper.new(paper_params)
       paper.save
       ticket = Ticket.new
@@ -86,10 +87,6 @@ class API < Grape::API
   end
   
   resource :users do
-    get '/' do
-      User.all
-    end
-
     post '/authorize' do
       user_params = params.slice(
          :username,
@@ -109,12 +106,27 @@ class API < Grape::API
       user
     end 
     
+    get '/' do
+      User.all
+    end
+    
     # "users/%d/received_papers.json",[self id]]
     # "users/%d/participating_papers.json",[self id]]
     # "users/%d/created_papers.json",[self id]]
     get '/:id/participating_papers' do
       user = User.find_by_id(params[:id])
       user.papers
+    end
+    
+    get '/:id' do
+      User.find_by_id(params[:id])
+    end
+    
+    post '/:id/apn_key' do
+      user = User.find_by_id(params[:id])
+      user.apn_key = params[:apn_key]
+      user.save
+      user
     end
   end
 end

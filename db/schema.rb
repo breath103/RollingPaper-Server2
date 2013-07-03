@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130701122447) do
+ActiveRecord::Schema.define(:version => 20130703172441) do
 
   create_table "image_contents", :force => true do |t|
     t.float    "x"
@@ -34,6 +34,14 @@ ActiveRecord::Schema.define(:version => 20130701122447) do
     t.string   "frined_facebook_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+  end
+
+  create_table "mobile_keys", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "type"
+    t.string   "key"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "papers", :force => true do |t|
@@ -82,6 +90,7 @@ ActiveRecord::Schema.define(:version => 20130701122447) do
     t.string   "name"
     t.string   "picture"
     t.string   "birthday"
+    t.string   "apn_key"
   end
 
 end
