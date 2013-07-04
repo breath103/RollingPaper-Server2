@@ -1,3 +1,4 @@
+require "awesome_print"
 class API < Grape::API
   format :json
   default_format :json
@@ -11,9 +12,9 @@ class API < Grape::API
 
     get '/backgrounds' do
       [
-        "http://www.hdwallpapersbest.com/wp-content/uploads/2013/01/colorful_background-wide1.jpg",
-        "http://us.123rf.com/400wm/400/400/aparagraph/aparagraph1103/aparagraph110300057/9109200-ripped-striped-background.jpg",
-        "http://downloads.xdesktopwallpapers.com/wp-content/uploads/2012/04/3d%20Colorful%20Squares%20On%20Black%20Background.jpg",
+        "http://t2.gstatic.com/images?q=tbn:ANd9GcShrXNxT0JaIpDVN7wP_il0dEBo4IBkqdXjChDS8uvL7cWHZV7g",
+        "http://t3.gstatic.com/images?q=tbn:ANd9GcQ_iMlY9xR6v79AwuiGIB0va2cJ8TTpbgTBV3tKzmI8vF1xgyRc",
+        "http://th09.deviantart.net/fs71/200H/i/2011/258/a/3/stone_texture_10___seamless_by_agf81-d49w3l3.jpg"
       ]
     end
     
@@ -37,6 +38,9 @@ class API < Grape::API
     
     put '/:id' do
       paper = Paper.find_by_id(params[:id])
+      paper_params = params.slice( :creator_id, :title, :width, :height, :notice, :receive_time, :friend_facebook_id, :background );
+      ap paper_params
+	    paper.update_attributes(paper_params)
       paper
     end
     
