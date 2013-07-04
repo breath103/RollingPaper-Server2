@@ -1,4 +1,40 @@
-<h1><%=@paper.title%></h1>
-<p>
-	<%=@paper.to_json%>
-</p>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%=@paper.title%></title>
+  		<%= stylesheet_link_tag    "papers" %>
+	</head>
+	<body onresize="autoResizeContentsContainer();">
+		<div class="Container" >
+			<!--div class="default"></div-->
+			<!-- background 사이즈를 계산하는 부분을 다시 넣어야한다. 지금은 걍 10퍼센트로 고정-->
+			<div class="paper_outer" style="width:<%=@paper.width%>px;height:<%=@paper.height%>px;background-image:url('<%=@paper.background%>'); background-size:8%">	
+				<div class="icon_door"></div>
+				<div class="icon_door2"></div>
+				<% contents = @paper.contents %>
+				<% contents[:image].each { |i| %>
+					<div class ="image_content" style="<%=i.css(@paper)%>">
+						<img src="<%=i.image.url%>"/>
+					</div>
+				<% } %>
+			</div>
+		</div>
+		
+		<div class="title_container">
+			<div class="Web_front">
+			<div class="clear_icon"></div>
+				<div class="Web_front_title">"<%=@paper.title%>"</div>
+				<div class="Web_front_date">2013.08.15</div>
+				<div class="under_scroll_container">
+					<div class="under_scroll_left"></div>
+					<div class="under_list_container">
+						<div class="under_list_box">
+						</div>
+					</div>
+					<div class="under_scroll_right"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+

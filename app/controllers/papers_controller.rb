@@ -4,5 +4,6 @@ class PapersController < ApplicationController
   end
   def show 
     @paper = Paper.find_by_id(params[:id])
+    render layout: false
   end 
 end

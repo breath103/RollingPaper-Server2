@@ -1,3 +1,222 @@
 // Place all the styles related to the Papers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+html,body {
+	padding: 0px;
+	border: 0px;
+	margin: 0px;
+	overflow: hidden;
+	width:100%;
+	height:100%;
+	font-family: '맑은 고딕',Helvetica,sans-serif;
+}
+.sound_content{
+	position: absolute;	
+}
+.image_content{
+	border-radius:5% 5% 5% 5%;
+	position: absolute;
+}
+.image_content img{
+	width:100%;
+	height:100%;
+	border-radius:5% 5% 5% 5%;
+}
+a:link {
+	color: #9a9e72;
+	text-decoration: none;
+} /* unvisited link */
+a:visited {
+	color: #9a9e72;
+} /* visited link */
+a:hover {
+	color: #BDB76B;
+} /* mouse over link */
+a:active {
+	color: #0f4e3a;
+} /* selected link */
+
+/* Main-Front */
+.title_container{
+	width:100%;
+	height:100%;
+	position:fixed;
+	left:0px;
+	top:0px;
+	background-color: rgba(19, 19, 14, 0.82);
+	z-index: 10000;
+}
+.Web_front{
+	position: relative;
+	
+	
+	max-width:750px;
+	max-height:536px;
+	
+	width: 750px;
+	height: 536px;
+	
+	
+	background-image: url("/images/web_front.png");
+	background-size: 100% 100%;
+}
+.Web_front_title{
+	position: relative;
+	width: 50%;
+	height: 15%;
+	left: 24%;
+	top: 46%;
+	color: #ccbb86;
+	text-shadow: 1px 1px 2px #888888;
+	font-size: 200%;
+	text-align: center;
+}
+.Web_front_date{
+	position: relative;
+	width: 20%;
+	height: 4%;
+	left: 40%;
+	top: 47%;
+	color: #ccbb86;
+	font-size: 80%;
+	text-align: center;
+	background-color: transparent;
+}
+/*scroll start~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.under_scroll_container{
+	position:relative;
+	width:85%;
+	height:12%;
+	left: 7%;
+	top: 60%;
+}
+.under_scroll_left{
+	float: left;
+	width: 8%;
+	height: 100%;
+	background-image: url("/images/left.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size: 40% 40%;
+}
+
+.under_list_container{
+	float: left;
+	width: 82%;
+	height: 100%;
+	margin-left: 2px;
+	overflow:hidden;
+	overflow-y:hidden;
+}
+.under_list_box{
+	position: relative;
+	width: 1500px;
+	height: 100%;
+}
+.under_list{
+	float: left;
+	width:10%;
+	height:90%;
+	margin-top: 6px;
+	margin-left: 5px;
+}
+.under_list_image{
+	float: left;
+	width: 30%;
+	height: 80%;
+	margin-top: 4%;
+	margin-left: 4%;
+}
+.under_list_name{
+	position:static;
+	float: right;
+	width: 54%;
+	height: 40%;
+	margin-right: 3%;
+	margin-top: 12%;
+	color: #ccbb86;
+	font-weight:bold;
+	overflow:hidden;
+}
+.under_scroll_right{
+	float: right;
+	width: 8%;
+	height: 100%;
+	background-image: url("/images/right.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size: 40% 40%;
+}
+
+.Front_loading{
+	position: inherit;
+	width: auto;
+	height: 3%;
+	top: 60%;
+	text-align: center;
+}
+.page_indicator
+{
+	display: inline-block;
+	width: 10px;
+	height: 100%;
+	background-image: url("/images/light_round.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+	text-align: center;
+}
+.selected{
+	background-image: url("/images/dark_round.png");
+}
+/* Main-Front */
+
+/*Content-Container*/
+.Container {
+	width:100%;
+	height:100%;
+	background-image: url("/images/main_background.png");
+}
+.default{
+	background-color: white;
+	width: 30px;
+	height: 30px;	
+}
+.Container .paper_outer{	
+	display: block;
+	position: relative;
+}
+.icon_door{
+	position: absolute;
+	float: left;
+	width: 3.5%;
+	height: 6%;
+	top: 1%;
+	left: 1%;
+	background-image: url("/images/pop-up.png");
+	background-position: center center;
+	background-size: 100% 100%;
+	z-index: 1000;
+}
+.icon_door2{
+	position: absolute;
+	width: 3.5%;
+	height: 6%;
+	top: 1%;
+	left: 1%;
+	background-image: url("/images/pop-up2.png");
+	background-position: center center;
+	background-size: 100% 100%;
+	z-index: 1000;	
+}
+.clear_icon{
+	position: relative;
+	float: right;
+	width: 3%;
+	height: 4%;
+	background-image: url("/images/x_icon.png");
+	background-size: 100% 100%;
+	right: 4%;
+	top: 5%;
+}
+
