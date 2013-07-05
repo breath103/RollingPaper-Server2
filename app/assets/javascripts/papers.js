@@ -106,4 +106,19 @@ $(function(){
 		$(".icon_door").fadeIn();	
 		$(".title_container").clearQueue().fadeOut();	
 	});
+
+	var alreadySendMessage = false;
+
+	var message = prompt("메시지 : ");
+	$.post("/api/papers/1/feedback",{"feedback" : message},function(response){
+		console.log(arguments);
+	});
+	
+	$(window).bind('beforeunload', function(eventObject) {
+		if(alreadySendMessage) {
+			return
+		} else {
+			return "아직 친구들에게 메시지를 보내지 않으셨습니다";
+		}
+	});
 });

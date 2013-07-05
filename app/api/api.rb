@@ -36,6 +36,13 @@ class API < Grape::API
       paper
     end
     
+    post '/:id/feedback' do
+      if params[:id] && params[:feedback]
+        paper = Paper.find_by_id(params[:id])
+        paper.send_feedback_to_participants(params[:feedback])
+      end
+    end
+    
     put '/:id' do
       paper = Paper.find_by_id(params[:id])
       paper_params = params.slice( :creator_id, :title, :width, :height, :notice, :receive_time, :friend_facebook_id, :background );

@@ -9,7 +9,11 @@ class Paper < ActiveRecord::Base
   def contents
     {
       image: self.image_contents,
-      sound: []
+      sound: self.sound_contents
     }
+  end
+  
+  def send_feedback_to_participants(feedback)
+    (users.each { |u| u.send_push_notification({badge: 0,alert: feedback}) }).length
   end
 end
