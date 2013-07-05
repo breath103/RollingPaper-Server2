@@ -32,6 +32,16 @@ class API < Grape::API
       paper
     end
 
+    post '/:id/feedback' do
+      if params[:id] && params[:feedback]
+        paper = Paper.find_by_id(params[:id])
+        paper.send_feedback_to_participants(params[:feedback])
+        # paper.is_feedback_sended = true
+        # paper.save!
+      end
+    end
+    
+    
     get '/:id' do 
       paper = Paper.find_by_id(params[:id])
       paper
@@ -117,7 +127,11 @@ class API < Grape::API
       if !user
         user = User.new(user_params)
         user.save
+      else 
+        user.update_attributes(user_params)
       end
+      
+      
       user
     end 
     
@@ -132,6 +146,11 @@ class API < Grape::API
       user.papers
     end
     
+    get '/:id/received_papers' do
+      user = User.find_by_id(params[:id])
+      user.received_papers
+    end
+    
     get '/:id' do
       User.find_by_id(params[:id])
     end
@@ -140,9 +159,14 @@ class API < Grape::API
       user = User.find_by_id(params[:id])
       if params[:friends] && params[:paper_id]
         params[:friends].each { |fb_id|
-          invitation = Invitation.new({sender_id: user.id,friend_facebook_id: fb_id,paper_id: params[:paper_id]})
-          ap invitation
-          invitation.save
+          user = User.find_by_facebook_id(fb_id)
+          if user 
+            t = Ticket.new({user_id: user.id, paper_id: params[:paper_id]})
+            t.save
+          end
+          # invitation = Invitation.new({sender_id: user.id,friend_facebook_id: fb_id,paper_id: params[:paper_id]})
+          # ap invitation
+          # invitation.save
         }
       end
       

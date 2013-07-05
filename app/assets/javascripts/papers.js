@@ -1,8 +1,15 @@
 function checkFBAuthResponse(response) { 
 	console.log(response);
+	$.post("/users/login",{
+		facebook_id : FB.getUserID()
+	});
 }
 function initFacebook() {
-	FB.init({ appId: '333864290041286', status: false, cookie: true, xfbml: true ,oauth:true});
+	FB.init({ appId: '333864290041286', 
+			  status: false, 
+			  cookie: true,
+			   xfbml: true,
+			   oauth: true});
 	FB.getLoginStatus(function(response) {
 		if (response.authResponse && response.authResponse.userID) {
 			checkFBAuthResponse(response);
@@ -11,11 +18,17 @@ function initFacebook() {
 			FB.login(function(response){
 				if (response.authResponse) {
 			    	checkFBAuthResponse(response);
-			    } else { }
+			    }
 			});
 		}
 	});
 }	
+function sendFeedback(message){
+	$.post("/api/papers/" + rollingpaper.id + "/feedback",{"feedback" : message},function(response){
+		alert("전송되었습니다!");
+	});
+}
+
 function buildSize(width,height) {
 	return{
 		width : width,
@@ -109,16 +122,31 @@ $(function(){
 
 	var alreadySendMessage = false;
 
-	var message = prompt("메시지 : ");
-	$.post("/api/papers/1/feedback",{"feedback" : message},function(response){
-		console.log(arguments);
-	});
+	// var message = prompt("메시지 : ");
+	// $.post("/api/papers/1/feedback",{"feedback" : message},function(response){
+	// 	console.log(arguments);
+	// });
 	
-	$(window).bind('beforeunload', function(eventObject) {
-		if(alreadySendMessage) {
-			return
-		} else {
-			return "아직 친구들에게 메시지를 보내지 않으셨습니다";
-		}
-	});
+	// 아직 피드백을 안보냈다면
+	if (!rollingpaper.is_feedback_sended) {
+		$(window).bind('beforeunload', function(eventObject) {
+			if(rollingpaper.is_feedback_sended) {
+				return;
+			} else {
+				setTimeout(function(){
+					sendFeedback(prompt("메시지를 입력해주세요 : "));
+					$(window).unbind('beforeunload');
+				},5000);
+				return "아직 친구들에게 메시지를 보내지 않으셨습니다. 친구들에게 감사 인사를 보내보세요";
+			}
+		});
+	}
+	
+	// $(window).bind('beforeunload', function(eventObject) {
+	// 	$("body").fadeOut();
+	// 	if(alreadySendMessage) {
+	// 	} else {
+	// 		return "아직 친구들에게 메시지를 보내지 않으셨습니다";
+	// 	}
+	// });
 });

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<h1>Received Papers</h1>
+		<% @me.received_papers.each { |p| %>
+			<div>
+				<a href="/papers/<%=p.id%>">
+					<h3><%=p.title%></h3>
+				</a>
+			</div>
+		<% } %>
+	</body>
+</html>
+

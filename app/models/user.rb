@@ -6,12 +6,20 @@ class User < ActiveRecord::Base
   attr_accessible :username, :email, :picture, :name, :birthday, :facebook_id, :facebook_accesstoken, :apn_key
   
   def send_push_notification(options = {})
-    push_notification = Houston::Notification.new(device: apn_key)
-    push_notification.badge = options[:badge] if options[:badge]
-    push_notification.alert = options[:alert] if options[:alert]
-    push_notification.custom_data = options[:custom_data] if options[:custom_data]
-    APN.push(push_notification)
+    if apn_key
+      push_notification = Houston::Notification.new(device: apn_key)
+      push_notification.badge = options[:badge] if options[:badge]
+      push_notification.alert = options[:alert] if options[:alert]
+      push_notification.custom_data = options[:custom_data] if options[:custom_data]
+      APN.push(push_notification)
+    else 
+      return false
+    end
   end 
+  
+  def received_papers
+    Paper.where(friend_facebook_id: facebook_id)
+  end
   
   def received_invitations
     Invitation.find_by_friend_facebook_id(facebook_id)
