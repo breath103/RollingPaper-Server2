@@ -23,6 +23,7 @@ class API < Grape::API
                                    :receive_time, :created_time, :friend_facebook_id, 
                                    :background );
       paper = Paper.new(paper_params)
+      paper.state = "editing"
       paper.save
       ticket = Ticket.new
       ticket.user_id = paper.creator_id
@@ -34,13 +35,6 @@ class API < Grape::API
     get '/:id' do 
       paper = Paper.find_by_id(params[:id])
       paper
-    end
-    
-    post '/:id/feedback' do
-      if params[:id] && params[:feedback]
-        paper = Paper.find_by_id(params[:id])
-        paper.send_feedback_to_participants(params[:feedback])
-      end
     end
     
     put '/:id' do
@@ -97,6 +91,16 @@ class API < Grape::API
     end
   end
   
+  resource :invitation do
+    post "/" do
+      invitation_params = params.slice(:sender_id, :paper_id, :friend_facebook_id)
+      ap invitiaton_params
+      i = Invitation.new(invitation_params)
+      i.save
+      i
+    end
+  end
+  
   resource :users do
     post '/authorize' do
       user_params = params.slice(
@@ -120,7 +124,6 @@ class API < Grape::API
     get '/' do
       User.all
     end
-    
     # "users/%d/received_papers.json",[self id]]
     # "users/%d/participating_papers.json",[self id]]
     # "users/%d/created_papers.json",[self id]]
@@ -133,11 +136,24 @@ class API < Grape::API
       User.find_by_id(params[:id])
     end
     
+    post '/:id/invite_friends' do
+      user = User.find_by_id(params[:id])
+      if params[:friends] && params[:paper_id]
+        params[:friends].each { |fb_id|
+          invitation = Invitation.new({sender_id: user.id,friend_facebook_id: fb_id,paper_id: params[:paper_id]})
+          ap invitation
+          invitation.save
+        }
+      end
+      
+    end
+    
     post '/:id/apn_key' do
       user = User.find_by_id(params[:id])
       user.apn_key = params[:apn_key]
       user.save
       user
     end
+    
   end
 end

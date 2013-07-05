@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130703172441) do
+ActiveRecord::Schema.define(:version => 20130705150400) do
 
   create_table "image_contents", :force => true do |t|
     t.float    "x"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(:version => 20130703172441) do
   create_table "invitations", :force => true do |t|
     t.integer  "sender_id"
     t.integer  "paper_id"
-    t.string   "frined_facebook_id"
+    t.string   "friend_facebook_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(:version => 20130703172441) do
     t.integer  "width"
     t.integer  "height"
     t.string   "background"
+    t.string   "state"
   end
 
   add_index "papers", ["creator_id"], :name => "index_papers_on_user_id"

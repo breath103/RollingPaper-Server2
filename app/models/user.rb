@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :tickets
   has_many :papers , through: :tickets
   attr_accessible :username, :email, :picture, :name, :birthday, :facebook_id, :facebook_accesstoken, :apn_key
-
+  
   def send_push_notification(options = {})
     push_notification = Houston::Notification.new(device: apn_key)
     push_notification.badge = options[:badge] if options[:badge]
@@ -12,4 +12,8 @@ class User < ActiveRecord::Base
     push_notification.custom_data = options[:custom_data] if options[:custom_data]
     APN.push(push_notification)
   end 
+  
+  def received_invitations
+    Invitation.find_by_friend_facebook_id(facebook_id)
+  end
 end
