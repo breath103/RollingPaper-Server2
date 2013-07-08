@@ -15,8 +15,9 @@
 /tmp
 public/image_contents/
 public/sound_contents/
+
 db/*.sqlite3
-db/schema.rb
+/db/schema.rb
 log/*
 tmp/
 .sass-cache/
