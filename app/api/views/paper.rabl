@@ -5,3 +5,7 @@ attributes :created_at, :updated_at, :friend_facebook_id, :receive_time, :backgr
 child :participants => :participants do
   attributes :id, :username, :picture, :facebook_id
 end
+
+child :invitations => :invitations do
+  extends "invitation"
+end
