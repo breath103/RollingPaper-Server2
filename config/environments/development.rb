@@ -34,6 +34,8 @@ RollingPaper::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  ASSET_HOST = "0.0.0.0:3000"  
   
   Paperclip.options[:command_path] = "/opt/local/bin/"
 end

@@ -35,5 +35,7 @@ RollingPaper::Application.configure do
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
   
+  ASSET_HOST = "0.0.0.0:3000"  
+  
   Paperclip.options[:command_path] = "/opt/local/bin/"
 end
