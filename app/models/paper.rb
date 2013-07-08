@@ -6,12 +6,11 @@ class Paper < ActiveRecord::Base
   has_many :image_contents
   has_many :sound_contents
   has_many :tickets
-  has_many :users , through: :tickets
+  has_many :invitations
+  has_many :participants, source: :user, through: :tickets
   
   validates :state, presence: true, inclusion: { in: ["editing", "wait_for_sended", "sended" , "opened"] }
-  def init
-    print "ASDFASDFASDF"
-  end
+
   def contents
     {
       image: image_contents,
