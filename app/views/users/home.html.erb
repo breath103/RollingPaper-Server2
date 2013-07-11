@@ -1,9 +1,46 @@
 <!DOCTYPE html>
 <html>
 	<head>
+  		<%= stylesheet_link_tag    "application" %>
+		<%= javascript_include_tag "application" %>
+		<script src="/bootstrap/js/bootstrap.js"></script>
+		<script>
+			$(function(){
+				$("#send_button").click(function(){
+					$(".test").remove();
+				});
+				setInterval(function(){
+					var newTest = $('<div class="test"></div>');
+					$("body").append(newTest);
+					newTest.css({"left":Math.random()*100+"%"})
+						   .animate({top:"40%"});
+					newTest.click(function(){
+						$(this).animate({"width":"100px","height":"100px"},function(){
+							$(this).remove();
+						});
+					});
+				}, 1000);
+				$("#button2").click(function(){
+					$(".test").css({"background-color":"blue"});
+				});
+			});
+		</script>
+		<style>
+		.test {
+			width: 30px;
+			height: 30px;
+			position:absolute;
+			left:0px;
+			top:0px;
+			background-color: red;
+		}
+		</style>
+		<link href="/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"></link>
 	</head>
 	<body>
 		<h1>Received Papers</h1>
+		<button id="send_button">!1!!!!!!!!!!!!!</button>
+		<button id="button2">color change</button>
 		<% @me.received_papers.each { |p| %>
 			<div>
 				<a href="/papers/<%=p.id%>">
