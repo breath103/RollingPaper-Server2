@@ -30,6 +30,10 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     awesome_print (1.1.0)
+    aws-sdk (1.11.2)
+      json (~> 1.4)
+      nokogiri (< 1.6.0)
+      uuidtools (~> 2.1)
     backports (3.3.1)
     builder (3.0.4)
     climate_control (0.0.3)
@@ -89,6 +93,7 @@ GEM
     mime-types (1.23)
     multi_json (1.7.7)
     multi_xml (0.5.3)
+    nokogiri (1.5.10)
     oj (2.1.2)
     paperclip (3.4.2)
       activemodel (>= 3.0.0)
@@ -152,6 +157,7 @@ GEM
     uglifier (2.1.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    uuidtools (2.1.4)
     virtus (0.5.5)
       backports (~> 3.3)
       descendants_tracker (~> 0.0.1)
@@ -161,6 +167,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  aws-sdk
   coffee-rails (~> 3.2.1)
   factory_girl_rails
   grape

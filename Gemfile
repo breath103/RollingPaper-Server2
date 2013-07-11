@@ -27,6 +27,7 @@ gem 'grape'
 gem 'grape-rabl'
 gem 'factory_girl_rails'
 gem 'houston'
+gem "aws-sdk"
 gem "paperclip"
 gem "awesome_print"
 gem "thin"
