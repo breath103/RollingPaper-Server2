@@ -1,3 +1,4 @@
+require "awesome_print"
 class UserAPI < Grape::API
   format :json
   default_format :json
@@ -47,10 +48,15 @@ class UserAPI < Grape::API
     end
     
     post '/:id/invite_friends' do
-      user = User.find_by_id(params[:id])
+      invitor = User.find_by_id(params[:id])
+      ap params[:friends]
       if params[:friends] && params[:paper_id]
-        params[:friends].each { |fb_id|
-          invitation = Invitation.create({sender_id: user.id, friend_facebook_id: fb_id, paper_id: params[:paper_id]})
+        params[:friends].each { |user|
+          invitation = Invitation.create({sender_id: invitor.id, 
+                                          friend_facebook_id: user.id,
+                                          receiver_name: user.name,
+                                          receiver_picture: user.picture.data.url,
+                                          paper_id: params[:paper_id]})
           ap invitation
         }
       end
