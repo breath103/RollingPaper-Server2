@@ -16,10 +16,10 @@ test:
   adapter: postgresql
   host: localhost
   username: user
-  database: app-test
+  database: app-dev
 
 production:
   adapter: postgresql
   host: localhost
   username: user
-  database: app-production
+  database: app-dev

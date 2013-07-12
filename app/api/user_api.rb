@@ -41,6 +41,11 @@ class UserAPI < Grape::API
       user = User.find_by_id(params[:id])
       @papers = user.received_papers
     end
+
+    get '/:id/notifications' do
+      user = User.find_by_id(params[:id])
+      user.notifications
+    end
     
     get '/:id' do
       User.find_by_id(params[:id])

@@ -1,6 +1,6 @@
 class Paper < ActiveRecord::Base
   attr_accessible :creator_id, :title, :notice, :width, :height, :created_time, :id, :friend_facebook_id, :receive_time, :background  
-  attr_accessible :state, :is_feedback_sended
+  attr_accessible :state, :is_feedback_sended, :recipient_name
   
   belongs_to :creator, class_name: User.to_s, foreign_key: :creator_id, autosave: true
   has_many :image_contents

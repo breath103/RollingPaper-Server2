@@ -1,8 +1,10 @@
+require "awesome_print"
 class User < ActiveRecord::Base
   has_many :created_papers, inverse_of: :creator, 
             class_name: Paper.to_s, foreign_key: :creator_id, autosave: true
   has_many :tickets
   has_many :papers , through: :tickets
+  has_many :notifications, foreign_key: :recipient_id
   attr_accessible :username, :email, :picture, :name, :birthday, :facebook_id, :facebook_accesstoken, :apn_key
   
   def send_push_notification(options = {})
@@ -11,6 +13,7 @@ class User < ActiveRecord::Base
       push_notification.badge = options[:badge] if options[:badge]
       push_notification.alert = options[:alert] if options[:alert]
       push_notification.custom_data = options[:custom_data] if options[:custom_data]
+      ap push_notification
       APN.push(push_notification)
     else 
       return false
