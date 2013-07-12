@@ -68,4 +68,13 @@ RollingPaper::Application.configure do
   ASSET_HOST = "rollingpaper-production.herokuapp.com"
   
   Paperclip.options[:command_path] = "/opt/local/bin/"
+  
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => "rollingpaper",
+      :access_key_id => "AKIAIL54PVLZG4DXFD4A",
+      :secret_access_key => "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"
+    }
+  }
 end

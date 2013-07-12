@@ -2,11 +2,7 @@ class ImageContent < ActiveRecord::Base
   include Paperclip::Glue 
   belongs_to :user
   belongs_to :paper
-  has_attached_file :image,
-    :styles => {:thumb => '120x120>', :large => '640x480>' },
-    :default_style => :thumb,
-    :url  => "http://#{ASSET_HOST}/:class/:attachment/:id/:style/:basename.:extension",
-    :path => ":rails_root/public/:class/:attachment/:id/:style/:basename.:extension"
+  has_attached_file :image, :styles => {:thumb => '120x120>', :large => '640x480>' }
   attr_accessible :id, :user_id, :paper_id
   attr_accessible :x, :y, :width, :height, :rotation
   attr_accessible :image 
