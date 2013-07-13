@@ -20,11 +20,15 @@ class User < ActiveRecord::Base
     end
   end 
   
+  def received_invitations
+    Invitations.where(friend_facebook_id: facebook_id)
+  end
+  
   def received_papers
     Paper.where(friend_facebook_id: facebook_id)
   end
   
-  def received_invitations
-    Invitation.find_by_friend_facebook_id(facebook_id)
+  def sended_papers
+    papers.where("state = 'opened' OR state = 'sended'")
   end
 end

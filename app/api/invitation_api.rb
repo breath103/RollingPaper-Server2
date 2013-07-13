@@ -12,6 +12,16 @@ class InvitationAPI < Grape::API
       i.save
       i
     end
-  end
 
+    post "/:id/accept" do
+      invitation  = Invitations.find(params[:id])
+      invitation.accept
+    end
+    
+    delete "/:id/reject" do
+      invitation  = Invitations.find(params[:id])
+      invitation.reject
+    end
+
+  end
 end

@@ -11,6 +11,10 @@ class Invitation < ActiveRecord::Base
     Ticket.create({user_id: sender_id,paper_id: paper_id})
   end
   
+  def reject
+    self.delete
+  end
+  
   private 
     def send_invitation
       user = User.find_by_facebook_id (friend_facebook_id)
