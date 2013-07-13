@@ -1,0 +1,54 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require bootstrap
+ */
+
+html, body {
+	width:100%;
+	height:100%;
+}
+
+header {
+	width:100%;
+	height:184px;
+}
+
+.container {
+	width:100%;
+	background-color:rgb(226,226,226);
+}
+
+.paper
+{
+	float:left;
+	border:6px solid #ffffff;
+	margin:50px 50px 50px 50px;
+	width:200px;
+	height:100px;
+	position:relative;
+}
+.paper .title-cover
+{
+	width:100%;
+	height:100%;
+	position:absolute;
+	left:0;
+	top:0;
+	display:none;
+	font : "나눔고딕", 14pt;
+	border:6px solid #97D1B1;
+	background-color:rgba(255,255,255,0.8);
+}
+
+.paper:hover .title-cover
+{
+	display:block;
+}

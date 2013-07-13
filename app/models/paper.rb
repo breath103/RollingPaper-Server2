@@ -19,9 +19,9 @@ class Paper < ActiveRecord::Base
   end
   def send_feedback_to_participants(feedback)
     if feedback.kind_of?(String)
-      (users.each { |u| u.send_push_notification({badge: 0,alert: feedback}) }).length
+      (participants.each { |u| u.send_push_notification({badge: 0,alert: feedback}) }).length
     else
-      (users.each { |u| u.send_push_notification(feedback) }).length
+      (participants.each { |u| u.send_push_notification(feedback) }).length
     end  
   end
 end

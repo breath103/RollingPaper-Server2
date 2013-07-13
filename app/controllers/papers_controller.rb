@@ -16,7 +16,7 @@ class PapersController < ApplicationController
 
   def show 
     @paper = Paper.find_by_id(params[:id])
-    if(@paper.state != "opened")
+    if(@paper && @paper.state != "opened")
       @paper.send_feedback_to_participants "이나연 님이 #{@paper.title}를 보셨습니다"
       @paper.state = "opened"
       @paper.save!
