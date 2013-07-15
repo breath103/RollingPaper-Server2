@@ -1,4 +1,3 @@
-require "awesome_print"
 class User < ActiveRecord::Base
   has_many :created_papers, inverse_of: :creator, 
             class_name: Paper.to_s, foreign_key: :creator_id, autosave: true
@@ -6,14 +5,16 @@ class User < ActiveRecord::Base
   has_many :papers , through: :tickets
   has_many :notifications, foreign_key: :recipient_id
   attr_accessible :username, :email, :picture, :name, :birthday, :facebook_id, :facebook_accesstoken, :apn_key
+
+  after_create :user_created  
   
   def send_push_notification(options = {})
+    print "send#{apn_key}"
     if apn_key
       push_notification = Houston::Notification.new(device: apn_key)
       push_notification.badge = options[:badge] if options[:badge]
       push_notification.alert = options[:alert] if options[:alert]
       push_notification.custom_data = options[:custom_data] if options[:custom_data]
-      ap push_notification
       APN.push(push_notification)
     else 
       return false
@@ -31,4 +32,11 @@ class User < ActiveRecord::Base
   def sended_papers
     papers.where("state = 'opened' OR state = 'sended'")
   end
+  
+  private
+    def user_created
+      # handle invitation that not sended yet
+      invitations = self.received_invitations
+      invitations.each {|i| i.send_invitation }
+    end
 end

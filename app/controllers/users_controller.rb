@@ -1,4 +1,3 @@
-require "awesome_print"
 class UsersController < ApplicationController
   def home
     @me = current_user

@@ -1,4 +1,3 @@
-require 'awesome_print'
 class SoundContentsController < ApplicationController
   respond_to :json
   def create
