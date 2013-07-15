@@ -5,7 +5,7 @@ class Paper < ActiveRecord::Base
   belongs_to :creator, class_name: User.to_s, foreign_key: :creator_id, autosave: true
   has_many :image_contents
   has_many :sound_contents
-  has_many :tickets
+  has_many :tickets, dependent: :destroy
   has_many :invitations
   has_many :participants, source: :user, through: :tickets
   

@@ -3,8 +3,8 @@ class InvitationAPI < Grape::API
   default_format :json
   formatter :json, Grape::Formatter::Rabl
   content_type :json, "application/json; charset=utf-8"
-
-  resource :invitation do
+  
+  resource :invitations do
     post "/" do
       invitation_params = params.slice(:sender_id, :paper_id, :friend_facebook_id)
       ap invitiaton_params
@@ -14,14 +14,13 @@ class InvitationAPI < Grape::API
     end
 
     post "/:id/accept" do
-      invitation  = Invitations.find(params[:id])
+      invitation  = Invitation.find(params[:id])
       invitation.accept
     end
     
     delete "/:id/reject" do
-      invitation  = Invitations.find(params[:id])
+      invitation  = Invitation.find(params[:id])
       invitation.reject
     end
-
   end
 end

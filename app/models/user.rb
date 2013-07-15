@@ -1,8 +1,9 @@
 class User < ActiveRecord::Base
   has_many :created_papers, inverse_of: :creator, 
             class_name: Paper.to_s, foreign_key: :creator_id, autosave: true
-  has_many :tickets
-  has_many :papers , through: :tickets
+  has_many :tickets, dependent: :destroy
+  has_many :papers, through: :tickets
+  has_many :invitations, foreign_key: :sender_id, dependent: :destroy
   has_many :notifications, foreign_key: :recipient_id
   attr_accessible :username, :email, :picture, :name, :birthday, :facebook_id, :facebook_accesstoken, :apn_key
 
@@ -22,7 +23,7 @@ class User < ActiveRecord::Base
   end 
   
   def received_invitations
-    Invitations.where(friend_facebook_id: facebook_id)
+    Invitation.where(friend_facebook_id: facebook_id)
   end
   
   def received_papers
@@ -36,7 +37,6 @@ class User < ActiveRecord::Base
   private
     def user_created
       # handle invitation that not sended yet
-      invitations = self.received_invitations
-      invitations.each {|i| i.send_invitation }
+      self.received_invitations.each {|i| i.send_invitation }
     end
 end
