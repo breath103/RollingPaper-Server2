@@ -23,6 +23,7 @@ class Invitation < ActiveRecord::Base
         text: "#{recipient.username}님이 #{paper.title}에 참여했습니다."
       })
     end 
+    false
   end
   
   def reject
@@ -32,14 +33,15 @@ class Invitation < ActiveRecord::Base
   def send_invitation
     recipient = User.find_by_facebook_id (friend_facebook_id)
     if recipient
-      n = Notification.create({
+      Notification.create({
         sender: sender,
         recipient: recipient,
         notification_type: "invitation_received",
         source_id: id,
         picture: sender.picture,
-        text: "invitation from #{sender.username} to #{paper.title}"
+        text: "#{sender.username}님이 #{paper.title} 페이퍼로 초대하였습니다."
       })
     end
+    false
   end
 end

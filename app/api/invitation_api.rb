@@ -14,13 +14,17 @@ class InvitationAPI < Grape::API
     end
 
     post "/:id/accept" do
-      invitation  = Invitation.find(params[:id])
-      invitation.accept
+      invitation = Invitation.find(params[:id])
+      if invitation
+        invitation.accept 
+      end
     end
     
     delete "/:id/reject" do
-      invitation  = Invitation.find(params[:id])
-      invitation.reject
+      invitation = Invitation.find(params[:id])
+      if invitation
+        invitation.reject
+      end
     end
   end
 end
