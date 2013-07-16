@@ -9,6 +9,18 @@ class User < ActiveRecord::Base
 
   after_create :user_created  
   
+  def send_notification(notification) 
+    self.send_push_notification({
+      badge: self.notifications.length,
+      alert: notification.text,
+      custom_data: {
+        id: notification.id,
+        type: notification.notification_type,
+        source_id: notification.source_id
+      }
+    })
+  end
+  
   def send_push_notification(options = {})
     print "send#{apn_key}"
     if apn_key

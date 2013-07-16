@@ -24,6 +24,9 @@ gem "paperclip"
 gem "awesome_print"
 gem "capybara-screenshot"
 gem "thin"
+gem 'sidekiq'
+gem 'sinatra', require: false
+gem 'slim'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -1,3 +1,4 @@
+require 'sidekiq/web'
 RollingPaper::Application.routes.draw do
   post "users/login" => "logins#sign_in_with_facebook"
   resources :papers 
@@ -7,6 +8,9 @@ RollingPaper::Application.routes.draw do
   resources :sound_contents, path: '/api/sound_contents'
   
   get "/" => "users#home"
+  
+  mount Sidekiq::Web, at: '/sidekiq'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

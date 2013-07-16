@@ -4,7 +4,7 @@ class Notification < ActiveRecord::Base
   
   attr_accessible :id, :sender, :recipient, :source_id, :sender_id, :recipient_id, :notification_type 
   attr_accessible :picture, :text
-  validates_presence_of :sender, :recipient, :notification_type, :picture, :text
+  validates_presence_of :recipient, :notification_type, :picture, :text
   
   after_create :after_create_notification
   
