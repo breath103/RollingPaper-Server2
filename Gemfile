@@ -24,6 +24,7 @@ gem "paperclip"
 gem "awesome_print"
 gem "capybara-screenshot"
 gem "thin"
+gem 'imgkit', '~> 1.3.7'
 gem 'sidekiq'
 gem 'sinatra', require: false
 gem 'slim'

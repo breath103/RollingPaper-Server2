@@ -40,7 +40,7 @@ class Invitation < ActiveRecord::Base
         source_id: id,
         picture: sender.picture,
         text: "#{sender.username}님이 #{paper.title} 페이퍼로 초대하였습니다."
-      })
+      }).send_apn
     end
     false
   end

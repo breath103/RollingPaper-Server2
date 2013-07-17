@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+<title>class User - Rails Application Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/models/user.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">ActiveRecord::Base
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-received_invitations">#received_invitations</a>
+    
+    <li><a href="#method-i-received_papers">#received_papers</a>
+    
+    <li><a href="#method-i-send_push_notification">#send_push_notification</a>
+    
+    <li><a href="#method-i-sended_papers">#sended_papers</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./doc/README_FOR_APP.html">README_FOR_APP</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./API.html">API</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./ImageContent.html">ImageContent</a>
+  
+    <li><a href="./ImageContentsAPI.html">ImageContentsAPI</a>
+  
+    <li><a href="./ImageContentsController.html">ImageContentsController</a>
+  
+    <li><a href="./ImageContentsHelper.html">ImageContentsHelper</a>
+  
+    <li><a href="./Invitation.html">Invitation</a>
+  
+    <li><a href="./InvitationAPI.html">InvitationAPI</a>
+  
+    <li><a href="./LoginsController.html">LoginsController</a>
+  
+    <li><a href="./LoginsHelper.html">LoginsHelper</a>
+  
+    <li><a href="./MobileKey.html">MobileKey</a>
+  
+    <li><a href="./Notification.html">Notification</a>
+  
+    <li><a href="./Paper.html">Paper</a>
+  
+    <li><a href="./PaperAPI.html">PaperAPI</a>
+  
+    <li><a href="./PaperDeadlineNotificationWorker.html">PaperDeadlineNotificationWorker</a>
+  
+    <li><a href="./PaperSendNotificationWorker.html">PaperSendNotificationWorker</a>
+  
+    <li><a href="./PapersController.html">PapersController</a>
+  
+    <li><a href="./PapersHelper.html">PapersHelper</a>
+  
+    <li><a href="./SoundContent.html">SoundContent</a>
+  
+    <li><a href="./SoundContentsAPI.html">SoundContentsAPI</a>
+  
+    <li><a href="./SoundContentsController.html">SoundContentsController</a>
+  
+    <li><a href="./SoundContentsHelper.html">SoundContentsHelper</a>
+  
+    <li><a href="./Ticket.html">Ticket</a>
+  
+    <li><a href="./Time.html">Time</a>
+  
+    <li><a href="./User.html">User</a>
+  
+    <li><a href="./UserAPI.html">UserAPI</a>
+  
+    <li><a href="./UsersController.html">UsersController</a>
+  
+    <li><a href="./UsersHelper.html">UsersHelper</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class User</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-received_invitations" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">received_invitations</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="received_invitations-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">received_invitations</span>
+  <span class="ruby-constant">Invitation</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">friend_facebook_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">facebook_id</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- received_invitations-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- received_invitations-method -->
+
+    
+      <div id="method-i-received_papers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">received_papers</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="received_papers-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">received_papers</span>
+  <span class="ruby-constant">Paper</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">friend_facebook_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">facebook_id</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- received_papers-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- received_papers-method -->
+
+    
+      <div id="method-i-send_push_notification" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">send_push_notification</span><span
+            class="method-args">(options = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="send_push_notification-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">send_push_notification</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">print</span> <span class="ruby-node">&quot;send#{apn_key}&quot;</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">apn_key</span>
+    <span class="ruby-identifier">push_notification</span> = <span class="ruby-constant">Houston</span><span class="ruby-operator">::</span><span class="ruby-constant">Notification</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">device</span><span class="ruby-operator">:</span> <span class="ruby-identifier">apn_key</span>)
+    <span class="ruby-identifier">push_notification</span>.<span class="ruby-identifier">badge</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:badge</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:badge</span>]
+    <span class="ruby-identifier">push_notification</span>.<span class="ruby-identifier">alert</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:alert</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:alert</span>]
+    <span class="ruby-identifier">push_notification</span>.<span class="ruby-identifier">custom_data</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:custom_data</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:custom_data</span>]
+    <span class="ruby-constant">APN</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">push_notification</span>)
+  <span class="ruby-keyword">else</span> 
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- send_push_notification-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- send_push_notification-method -->
+
+    
+      <div id="method-i-sended_papers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sended_papers</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="sended_papers-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sended_papers</span>
+  <span class="ruby-identifier">papers</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;state = &#39;opened&#39; OR state = &#39;sended&#39;&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- sended_papers-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- sended_papers-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

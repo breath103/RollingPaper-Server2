@@ -1,7 +1,10 @@
 class Paper < ActiveRecord::Base
+  include Paperclip::Glue 
   attr_accessible :creator_id, :title, :notice, :width, :height, :created_time, :id, :friend_facebook_id, :receive_time, :background  
   attr_accessible :state, :is_feedback_sended, :recipient_name
 
+  has_attached_file :thumbnail, :styles => {:thumb => '120x120>', :large => '640x480>' }
+  
   belongs_to :creator, class_name: User.to_s, foreign_key: :creator_id, autosave: true
   has_many :image_contents
   has_many :sound_contents
@@ -26,8 +29,13 @@ class Paper < ActiveRecord::Base
     end  
   end
   
+  def web_view_url 
+    "http://#{ASSET_HOST}/papers/#{id}"
+  end
+  
   def handle_receive_time_changed
     print "handle_receive_time_changed"
-    PaperSendNotificationWorker.perform_at(self.receive_time.utc, self.id)
+    PaperSendNotificationWorker.perform_at( self.receive_time.utc, self.id )
+    PaperDeadlineNotificationWorker.perform_at( (self.receive_time - 10.minutes).utc, self.id )
   end 
 end

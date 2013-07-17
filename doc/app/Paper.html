@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+<title>class Paper - Rails Application Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/models/paper.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">ActiveRecord::Base
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-contents">#contents</a>
+    
+    <li><a href="#method-i-handle_receive_time_changed">#handle_receive_time_changed</a>
+    
+    <li><a href="#method-i-send_feedback_to_participants">#send_feedback_to_participants</a>
+    
+    <li><a href="#method-i-web_view_url">#web_view_url</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./doc/README_FOR_APP.html">README_FOR_APP</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./API.html">API</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./ImageContent.html">ImageContent</a>
+  
+    <li><a href="./ImageContentsAPI.html">ImageContentsAPI</a>
+  
+    <li><a href="./ImageContentsController.html">ImageContentsController</a>
+  
+    <li><a href="./ImageContentsHelper.html">ImageContentsHelper</a>
+  
+    <li><a href="./Invitation.html">Invitation</a>
+  
+    <li><a href="./InvitationAPI.html">InvitationAPI</a>
+  
+    <li><a href="./LoginsController.html">LoginsController</a>
+  
+    <li><a href="./LoginsHelper.html">LoginsHelper</a>
+  
+    <li><a href="./MobileKey.html">MobileKey</a>
+  
+    <li><a href="./Notification.html">Notification</a>
+  
+    <li><a href="./Paper.html">Paper</a>
+  
+    <li><a href="./PaperAPI.html">PaperAPI</a>
+  
+    <li><a href="./PaperDeadlineNotificationWorker.html">PaperDeadlineNotificationWorker</a>
+  
+    <li><a href="./PaperSendNotificationWorker.html">PaperSendNotificationWorker</a>
+  
+    <li><a href="./PapersController.html">PapersController</a>
+  
+    <li><a href="./PapersHelper.html">PapersHelper</a>
+  
+    <li><a href="./SoundContent.html">SoundContent</a>
+  
+    <li><a href="./SoundContentsAPI.html">SoundContentsAPI</a>
+  
+    <li><a href="./SoundContentsController.html">SoundContentsController</a>
+  
+    <li><a href="./SoundContentsHelper.html">SoundContentsHelper</a>
+  
+    <li><a href="./Ticket.html">Ticket</a>
+  
+    <li><a href="./Time.html">Time</a>
+  
+    <li><a href="./User.html">User</a>
+  
+    <li><a href="./UserAPI.html">UserAPI</a>
+  
+    <li><a href="./UsersController.html">UsersController</a>
+  
+    <li><a href="./UsersHelper.html">UsersHelper</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Paper</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-contents" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">contents</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="contents-source">
+            <pre><span class="ruby-comment"># File app/models/paper.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">contents</span>
+  {
+    <span class="ruby-identifier">image</span><span class="ruby-operator">:</span> <span class="ruby-identifier">image_contents</span>,
+    <span class="ruby-identifier">sound</span><span class="ruby-operator">:</span> <span class="ruby-identifier">sound_contents</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- contents-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- contents-method -->
+
+    
+      <div id="method-i-handle_receive_time_changed" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_receive_time_changed</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="handle_receive_time_changed-source">
+            <pre><span class="ruby-comment"># File app/models/paper.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_receive_time_changed</span>
+  <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;handle_receive_time_changed&quot;</span>
+  <span class="ruby-constant">PaperSendNotificationWorker</span>.<span class="ruby-identifier">perform_at</span>( <span class="ruby-keyword">self</span>.<span class="ruby-identifier">receive_time</span>.<span class="ruby-identifier">utc</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">id</span> )
+  <span class="ruby-constant">PaperDeadlineNotificationWorker</span>.<span class="ruby-identifier">perform_at</span>( (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">receive_time</span> <span class="ruby-operator">-</span> <span class="ruby-value">10</span>.<span class="ruby-identifier">minutes</span>).<span class="ruby-identifier">utc</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">id</span> )
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_receive_time_changed-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_receive_time_changed-method -->
+
+    
+      <div id="method-i-send_feedback_to_participants" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">send_feedback_to_participants</span><span
+            class="method-args">(feedback)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="send_feedback_to_participants-source">
+            <pre><span class="ruby-comment"># File app/models/paper.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">send_feedback_to_participants</span>(<span class="ruby-identifier">feedback</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">feedback</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)
+    (<span class="ruby-identifier">participants</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">u</span><span class="ruby-operator">|</span> <span class="ruby-identifier">u</span>.<span class="ruby-identifier">send_push_notification</span>({<span class="ruby-identifier">badge</span><span class="ruby-operator">:</span> <span class="ruby-value">0</span>,<span class="ruby-identifier">alert</span><span class="ruby-operator">:</span> <span class="ruby-identifier">feedback</span>}) }).<span class="ruby-identifier">length</span>
+  <span class="ruby-keyword">else</span>
+    (<span class="ruby-identifier">participants</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">u</span><span class="ruby-operator">|</span> <span class="ruby-identifier">u</span>.<span class="ruby-identifier">send_push_notification</span>(<span class="ruby-identifier">feedback</span>) }).<span class="ruby-identifier">length</span>
+  <span class="ruby-keyword">end</span>  
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- send_feedback_to_participants-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- send_feedback_to_participants-method -->
+
+    
+      <div id="method-i-web_view_url" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">web_view_url</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="web_view_url-source">
+            <pre><span class="ruby-comment"># File app/models/paper.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">web_view_url</span> 
+  <span class="ruby-node">&quot;http://#{ASSET_HOST}/papers/#{id}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- web_view_url-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- web_view_url-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
