@@ -7,7 +7,6 @@ class LoginsController < ApplicationController
         user.save
       end
       session[:current_user_id] = user.id
-      print "SADGASDFADSSDF#{session[:current_user_id]}"
       render json: user
     else 
       render json: {}

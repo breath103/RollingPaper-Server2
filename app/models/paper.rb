@@ -13,6 +13,7 @@ class Paper < ActiveRecord::Base
   has_many :participants, source: :user, through: :tickets
   validates :state, presence: true, inclusion: { in: ["editing", "sended" , "opened"] }
   after_save :handle_receive_time_changed, :if => :receive_time_changed?
+  after_save :handle_state_changed, :if => :state_changed?
 
   def contents
     {
@@ -37,5 +38,9 @@ class Paper < ActiveRecord::Base
     print "handle_receive_time_changed"
     PaperSendNotificationWorker.perform_at( self.receive_time.utc, self.id )
     PaperDeadlineNotificationWorker.perform_at( (self.receive_time - 10.minutes).utc, self.id )
-  end 
+  end
+  
+  def handle_state_changed
+    PaperOpenNotificationWorker.perform_async(self.id) if (state == "opened")      
+  end
 end
