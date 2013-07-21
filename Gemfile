@@ -11,6 +11,22 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'database_cleaner', '~> 0.8.0'
+  gem 'jasmine'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-coffeescript'
+  gem 'awesome_print'
+  gem 'pry'
+  gem 'pry-nav'
+  gem 'selenium-webdriver'
+end
+
+gem 'cancan'
+gem 'devise'
 gem "aws-sdk"
 gem 'jquery-rails'
 gem 'rabl'

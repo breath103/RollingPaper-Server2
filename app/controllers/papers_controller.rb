@@ -9,7 +9,7 @@ class PapersController < ApplicationController
   #      redirect_to "logins/sign_in"
   #    end
   #  end
-  
+
   def index
     @papers = Paper.all
   end
