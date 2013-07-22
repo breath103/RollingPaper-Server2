@@ -1,0 +1,716 @@
+# Logfile created on 2013-07-18 23:42:43 +0900 by logger.rb/36483
+2013-07-18T14:42:46Z 3895 TID-1b82v2 INFO: Booting Sidekiq 2.7.2 with Redis at redis://localhost:6379/0
+2013-07-18T14:42:46Z 3895 TID-1b82v2 INFO: Running in ruby 2.0.0p247 (2013-06-27 revision 41674) [i686-linux]
+2013-07-18T14:42:46Z 3895 TID-1b82v2 INFO: See LICENSE and the LGPL-3.0 for licensing details.
+2013-07-18T15:02:50Z 3895 TID-1gvy58 PaperScreenshotWorker JID-543276008c817e273b43513d INFO: start
+2013-07-18T15:02:56Z 3895 TID-1gvy58 PaperScreenshotWorker JID-543276008c817e273b43513d INFO: done: 5.948 sec
+2013-07-18T15:08:26Z 3895 TID-1gvy58 PaperScreenshotWorker JID-83979a27de0dacc29d62f8e4 INFO: start
+2013-07-18T15:08:27Z 3895 TID-1gvy58 PaperScreenshotWorker JID-83979a27de0dacc29d62f8e4 INFO: fail: 0.478 sec
+2013-07-18T15:08:27Z 3895 TID-1gvy58 WARN: {"retry"=>true, "queue"=>"default", "class"=>"PaperScreenshotWorker", "args"=>[1], "jid"=>"83979a27de0dacc29d62f8e4", "error_message"=>"Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)\n[>                                                           ] 0%\r[======>                                                     ] 10%\r[======>                                                     ] 11%\r", "error_class"=>"IMGKit::CommandFailedError", "failed_at"=>2013-07-18 15:08:27 UTC, "retry_count"=>0}
+2013-07-18T15:08:27Z 3895 TID-1gvy58 WARN: Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)
+[>                                                           ] 0%[======>                                                     ] 10%[======>                                                     ] 11%
+2013-07-18T15:08:27Z 3895 TID-1gvy58 WARN: /usr/local/rvm/gems/ruby-2.0.0-p247/gems/imgkit-1.3.9/lib/imgkit/imgkit.rb:111:in `to_img'
+/root/release/RollingPaper-Server2/app/workers/paper_screenshot_worker.rb:7:in `perform'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:45:in `block (3 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/timeout.rb:14:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/active_record.rb:6:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/retry_jobs.rb:49:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:11:in `block in call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/logging.rb:22:in `with_context'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:7:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:44:in `block (2 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:80:in `stats'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:43:in `block in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `public_send'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `dispatch'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/future.rb:18:in `block in initialize'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `block in create'
+2013-07-18T15:09:02Z 3895 TID-1dnul2 PaperScreenshotWorker JID-83979a27de0dacc29d62f8e4 INFO: start
+2013-07-18T15:09:03Z 3895 TID-1dnul2 PaperScreenshotWorker JID-83979a27de0dacc29d62f8e4 INFO: fail: 0.392 sec
+2013-07-18T15:09:03Z 3895 TID-1dnul2 WARN: {"retry"=>true, "queue"=>"default", "class"=>"PaperScreenshotWorker", "args"=>[1], "jid"=>"83979a27de0dacc29d62f8e4", "error_message"=>"Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)\n[>                                                           ] 0%\r[======>                                                     ] 10%\r[======>                                                     ] 11%\r", "error_class"=>"IMGKit::CommandFailedError", "failed_at"=>"2013-07-18T15:08:27Z", "retry_count"=>1, "retried_at"=>2013-07-18 15:09:03 UTC}
+2013-07-18T15:09:03Z 3895 TID-1dnul2 WARN: Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)
+[>                                                           ] 0%[======>                                                     ] 10%[======>                                                     ] 11%
+2013-07-18T15:09:03Z 3895 TID-1dnul2 WARN: /usr/local/rvm/gems/ruby-2.0.0-p247/gems/imgkit-1.3.9/lib/imgkit/imgkit.rb:111:in `to_img'
+/root/release/RollingPaper-Server2/app/workers/paper_screenshot_worker.rb:7:in `perform'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:45:in `block (3 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/timeout.rb:14:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/active_record.rb:6:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/retry_jobs.rb:49:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:11:in `block in call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/logging.rb:22:in `with_context'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:7:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:44:in `block (2 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:80:in `stats'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:43:in `block in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `public_send'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `dispatch'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/future.rb:18:in `block in initialize'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `block in create'
+2013-07-18T15:10:02Z 3895 TID-1gvy58 PaperScreenshotWorker JID-83979a27de0dacc29d62f8e4 INFO: start
+2013-07-18T15:10:03Z 3895 TID-1gvy58 PaperScreenshotWorker JID-83979a27de0dacc29d62f8e4 INFO: fail: 0.342 sec
+2013-07-18T15:10:03Z 3895 TID-1gvy58 WARN: {"retry"=>true, "queue"=>"default", "class"=>"PaperScreenshotWorker", "args"=>[1], "jid"=>"83979a27de0dacc29d62f8e4", "error_message"=>"Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)\n[>                                                           ] 0%\r[======>                                                     ] 10%\r[======>                                                     ] 11%\r", "error_class"=>"IMGKit::CommandFailedError", "failed_at"=>"2013-07-18T15:08:27Z", "retry_count"=>2, "retried_at"=>2013-07-18 15:10:03 UTC}
+2013-07-18T15:10:03Z 3895 TID-1gvy58 WARN: Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)
+[>                                                           ] 0%[======>                                                     ] 10%[======>                                                     ] 11%
+2013-07-18T15:10:03Z 3895 TID-1gvy58 WARN: /usr/local/rvm/gems/ruby-2.0.0-p247/gems/imgkit-1.3.9/lib/imgkit/imgkit.rb:111:in `to_img'
+/root/release/RollingPaper-Server2/app/workers/paper_screenshot_worker.rb:7:in `perform'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:45:in `block (3 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/timeout.rb:14:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/active_record.rb:6:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/retry_jobs.rb:49:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:11:in `block in call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/logging.rb:22:in `with_context'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:7:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:44:in `block (2 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:80:in `stats'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:43:in `block in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `public_send'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `dispatch'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/future.rb:18:in `block in initialize'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `block in create'
+2013-07-18T15:11:18Z 3895 TID-1dnul2 PaperScreenshotWorker JID-83979a27de0dacc29d62f8e4 INFO: start
+2013-07-18T15:11:18Z 3895 TID-1dnul2 PaperScreenshotWorker JID-83979a27de0dacc29d62f8e4 INFO: fail: 0.502 sec
+2013-07-18T15:11:18Z 3895 TID-1dnul2 WARN: {"retry"=>true, "queue"=>"default", "class"=>"PaperScreenshotWorker", "args"=>[1], "jid"=>"83979a27de0dacc29d62f8e4", "error_message"=>"Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)\n[>                                                           ] 0%\r[======>                                                     ] 10%\r[============================================================] 100%\rError: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)\n", "error_class"=>"IMGKit::CommandFailedError", "failed_at"=>"2013-07-18T15:08:27Z", "retry_count"=>3, "retried_at"=>2013-07-18 15:11:18 UTC}
+2013-07-18T15:11:18Z 3895 TID-1dnul2 WARN: Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)
+[>                                                           ] 0%[======>                                                     ] 10%[============================================================] 100%Error: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)
+
+2013-07-18T15:11:18Z 3895 TID-1dnul2 WARN: /usr/local/rvm/gems/ruby-2.0.0-p247/gems/imgkit-1.3.9/lib/imgkit/imgkit.rb:111:in `to_img'
+/root/release/RollingPaper-Server2/app/workers/paper_screenshot_worker.rb:7:in `perform'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:45:in `block (3 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/timeout.rb:14:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/active_record.rb:6:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/retry_jobs.rb:49:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:11:in `block in call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/logging.rb:22:in `with_context'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:7:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:44:in `block (2 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:80:in `stats'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:43:in `block in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `public_send'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `dispatch'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/future.rb:18:in `block in initialize'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `block in create'
+2013-07-18T15:12:53Z 3895 TID-1gvy58 PaperScreenshotWorker JID-d8c52d64bc4ad4084243c688 INFO: start
+2013-07-18T15:12:53Z 3895 TID-1gvy58 PaperScreenshotWorker JID-d8c52d64bc4ad4084243c688 INFO: fail: 0.509 sec
+2013-07-18T15:12:53Z 3895 TID-1gvy58 WARN: {"retry"=>true, "queue"=>"default", "class"=>"PaperScreenshotWorker", "args"=>[1], "jid"=>"d8c52d64bc4ad4084243c688", "error_message"=>"Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)\n[>                                                           ] 0%\r[======>                                                     ] 10%\r[============================================================] 100%\rError: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)\n", "error_class"=>"IMGKit::CommandFailedError", "failed_at"=>2013-07-18 15:12:53 UTC, "retry_count"=>0}
+2013-07-18T15:12:53Z 3895 TID-1gvy58 WARN: Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)
+[>                                                           ] 0%[======>                                                     ] 10%[============================================================] 100%Error: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)
+
+2013-07-18T15:12:53Z 3895 TID-1gvy58 WARN: /usr/local/rvm/gems/ruby-2.0.0-p247/gems/imgkit-1.3.9/lib/imgkit/imgkit.rb:111:in `to_img'
+/root/release/RollingPaper-Server2/app/workers/paper_screenshot_worker.rb:7:in `perform'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:45:in `block (3 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/timeout.rb:14:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/active_record.rb:6:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/retry_jobs.rb:49:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:11:in `block in call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/logging.rb:22:in `with_context'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:7:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:44:in `block (2 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:80:in `stats'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:43:in `block in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `public_send'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `dispatch'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/future.rb:18:in `block in initialize'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `block in create'
+2013-07-18T15:13:18Z 3895 TID-1dnul2 PaperScreenshotWorker JID-d8c52d64bc4ad4084243c688 INFO: start
+2013-07-18T15:13:18Z 3895 TID-1dnul2 PaperScreenshotWorker JID-d8c52d64bc4ad4084243c688 INFO: fail: 0.501 sec
+2013-07-18T15:13:18Z 3895 TID-1dnul2 WARN: {"retry"=>true, "queue"=>"default", "class"=>"PaperScreenshotWorker", "args"=>[1], "jid"=>"d8c52d64bc4ad4084243c688", "error_message"=>"Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)\n[>                                                           ] 0%\r[======>                                                     ] 10%\r[======>                                                     ] 11%\r", "error_class"=>"IMGKit::CommandFailedError", "failed_at"=>"2013-07-18T15:12:53Z", "retry_count"=>1, "retried_at"=>2013-07-18 15:13:18 UTC}
+2013-07-18T15:13:18Z 3895 TID-1dnul2 WARN: Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)
+[>                                                           ] 0%[======>                                                     ] 10%[======>                                                     ] 11%
+2013-07-18T15:13:18Z 3895 TID-1dnul2 WARN: /usr/local/rvm/gems/ruby-2.0.0-p247/gems/imgkit-1.3.9/lib/imgkit/imgkit.rb:111:in `to_img'
+/root/release/RollingPaper-Server2/app/workers/paper_screenshot_worker.rb:7:in `perform'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:45:in `block (3 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/timeout.rb:14:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/active_record.rb:6:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/retry_jobs.rb:49:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:11:in `block in call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/logging.rb:22:in `with_context'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:7:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:44:in `block (2 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:80:in `stats'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:43:in `block in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `public_send'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `dispatch'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/future.rb:18:in `block in initialize'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `block in create'
+2013-07-18T15:13:43Z 3895 TID-1gvy58 PaperScreenshotWorker JID-cf2e0ff9b92f69c3edab815a INFO: start
+2013-07-18T15:13:44Z 3895 TID-1gvy58 PaperScreenshotWorker JID-cf2e0ff9b92f69c3edab815a INFO: fail: 0.506 sec
+2013-07-18T15:13:44Z 3895 TID-1gvy58 WARN: {"retry"=>true, "queue"=>"default", "class"=>"PaperScreenshotWorker", "args"=>[1], "jid"=>"cf2e0ff9b92f69c3edab815a", "error_message"=>"Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)\n[>                                                           ] 0%\r[======>                                                     ] 10%\r[============================================================] 100%\rError: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)\n", "error_class"=>"IMGKit::CommandFailedError", "failed_at"=>2013-07-18 15:13:44 UTC, "retry_count"=>0}
+2013-07-18T15:13:44Z 3895 TID-1gvy58 WARN: Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)
+[>                                                           ] 0%[======>                                                     ] 10%[============================================================] 100%Error: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)
+
+2013-07-18T15:13:44Z 3895 TID-1gvy58 WARN: /usr/local/rvm/gems/ruby-2.0.0-p247/gems/imgkit-1.3.9/lib/imgkit/imgkit.rb:111:in `to_img'
+/root/release/RollingPaper-Server2/app/workers/paper_screenshot_worker.rb:7:in `perform'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:45:in `block (3 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/timeout.rb:14:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/active_record.rb:6:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/retry_jobs.rb:49:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:11:in `block in call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/logging.rb:22:in `with_context'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:7:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:44:in `block (2 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:80:in `stats'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:43:in `block in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `public_send'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `dispatch'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/future.rb:18:in `block in initialize'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `block in create'
+2013-07-18T15:14:03Z 3895 TID-1dnul2 PaperScreenshotWorker JID-d8c52d64bc4ad4084243c688 INFO: start
+2013-07-18T15:14:03Z 3895 TID-1dnul2 PaperScreenshotWorker JID-d8c52d64bc4ad4084243c688 INFO: fail: 0.501 sec
+2013-07-18T15:14:03Z 3895 TID-1dnul2 WARN: {"retry"=>true, "queue"=>"default", "class"=>"PaperScreenshotWorker", "args"=>[1], "jid"=>"d8c52d64bc4ad4084243c688", "error_message"=>"Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)\n[>                                                           ] 0%\r[======>                                                     ] 10%\r[============================================================] 100%\rError: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)\n", "error_class"=>"IMGKit::CommandFailedError", "failed_at"=>"2013-07-18T15:12:53Z", "retry_count"=>2, "retried_at"=>2013-07-18 15:14:03 UTC}
+2013-07-18T15:14:03Z 3895 TID-1dnul2 WARN: Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)
+[>                                                           ] 0%[======>                                                     ] 10%[============================================================] 100%Error: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)
+
+2013-07-18T15:14:03Z 3895 TID-1dnul2 WARN: /usr/local/rvm/gems/ruby-2.0.0-p247/gems/imgkit-1.3.9/lib/imgkit/imgkit.rb:111:in `to_img'
+/root/release/RollingPaper-Server2/app/workers/paper_screenshot_worker.rb:7:in `perform'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:45:in `block (3 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/timeout.rb:14:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/active_record.rb:6:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/retry_jobs.rb:49:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:11:in `block in call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/logging.rb:22:in `with_context'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:7:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:44:in `block (2 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:80:in `stats'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:43:in `block in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `public_send'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `dispatch'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/future.rb:18:in `block in initialize'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `block in create'
+2013-07-18T15:14:18Z 3895 TID-1gvy58 PaperScreenshotWorker JID-83979a27de0dacc29d62f8e4 INFO: start
+2013-07-18T15:14:18Z 3895 TID-23dqew PaperScreenshotWorker JID-cf2e0ff9b92f69c3edab815a INFO: start
+2013-07-18T15:14:18Z 3895 TID-1gvy58 PaperScreenshotWorker JID-83979a27de0dacc29d62f8e4 INFO: fail: 0.491 sec
+2013-07-18T15:14:18Z 3895 TID-1gvy58 WARN: {"retry"=>true, "queue"=>"default", "class"=>"PaperScreenshotWorker", "args"=>[1], "jid"=>"83979a27de0dacc29d62f8e4", "error_message"=>"Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)\n[>                                                           ] 0%\r[======>                                                     ] 10%\r[============================================================] 100%\rError: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)\n", "error_class"=>"IMGKit::CommandFailedError", "failed_at"=>"2013-07-18T15:08:27Z", "retry_count"=>4, "retried_at"=>2013-07-18 15:14:18 UTC}
+2013-07-18T15:14:18Z 3895 TID-1gvy58 WARN: Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)
+[>                                                           ] 0%[======>                                                     ] 10%[============================================================] 100%Error: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)
+
+2013-07-18T15:14:18Z 3895 TID-1gvy58 WARN: /usr/local/rvm/gems/ruby-2.0.0-p247/gems/imgkit-1.3.9/lib/imgkit/imgkit.rb:111:in `to_img'
+/root/release/RollingPaper-Server2/app/workers/paper_screenshot_worker.rb:7:in `perform'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:45:in `block (3 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/timeout.rb:14:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/active_record.rb:6:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/retry_jobs.rb:49:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:11:in `block in call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/logging.rb:22:in `with_context'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:7:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:44:in `block (2 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:80:in `stats'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:43:in `block in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `public_send'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `dispatch'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/future.rb:18:in `block in initialize'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `block in create'
+2013-07-18T15:14:18Z 3895 TID-23dqew PaperScreenshotWorker JID-cf2e0ff9b92f69c3edab815a INFO: fail: 0.457 sec
+2013-07-18T15:14:18Z 3895 TID-23dqew WARN: {"retry"=>true, "queue"=>"default", "class"=>"PaperScreenshotWorker", "args"=>[1], "jid"=>"cf2e0ff9b92f69c3edab815a", "error_message"=>"Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)\n[>                                                           ] 0%\r[======>                                                     ] 10%\r[============================================================] 100%\rError: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)\n", "error_class"=>"IMGKit::CommandFailedError", "failed_at"=>"2013-07-18T15:13:44Z", "retry_count"=>1, "retried_at"=>2013-07-18 15:14:18 UTC}
+2013-07-18T15:14:18Z 3895 TID-23dqew WARN: Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)
+[>                                                           ] 0%[======>                                                     ] 10%[============================================================] 100%Error: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)
+
+2013-07-18T15:14:18Z 3895 TID-23dqew WARN: /usr/local/rvm/gems/ruby-2.0.0-p247/gems/imgkit-1.3.9/lib/imgkit/imgkit.rb:111:in `to_img'
+/root/release/RollingPaper-Server2/app/workers/paper_screenshot_worker.rb:7:in `perform'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:45:in `block (3 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/timeout.rb:14:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/active_record.rb:6:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/retry_jobs.rb:49:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:11:in `block in call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/logging.rb:22:in `with_context'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:7:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:44:in `block (2 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:80:in `stats'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:43:in `block in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `public_send'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `dispatch'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/future.rb:18:in `block in initialize'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `block in create'
+2013-07-18T15:15:18Z 3895 TID-23dqew PaperScreenshotWorker JID-cf2e0ff9b92f69c3edab815a INFO: start
+2013-07-18T15:15:18Z 3895 TID-23dqew PaperScreenshotWorker JID-cf2e0ff9b92f69c3edab815a INFO: fail: 0.504 sec
+2013-07-18T15:15:18Z 3895 TID-23dqew WARN: {"retry"=>true, "queue"=>"default", "class"=>"PaperScreenshotWorker", "args"=>[1], "jid"=>"cf2e0ff9b92f69c3edab815a", "error_message"=>"Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)\n[>                                                           ] 0%\r[======>                                                     ] 10%\r[============================================================] 100%\rError: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)\n", "error_class"=>"IMGKit::CommandFailedError", "failed_at"=>"2013-07-18T15:13:44Z", "retry_count"=>2, "retried_at"=>2013-07-18 15:15:18 UTC}
+2013-07-18T15:15:18Z 3895 TID-23dqew WARN: Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)
+[>                                                           ] 0%[======>                                                     ] 10%[============================================================] 100%Error: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)
+
+2013-07-18T15:15:18Z 3895 TID-23dqew WARN: /usr/local/rvm/gems/ruby-2.0.0-p247/gems/imgkit-1.3.9/lib/imgkit/imgkit.rb:111:in `to_img'
+/root/release/RollingPaper-Server2/app/workers/paper_screenshot_worker.rb:7:in `perform'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:45:in `block (3 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/timeout.rb:14:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/active_record.rb:6:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/retry_jobs.rb:49:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:11:in `block in call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/logging.rb:22:in `with_context'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:7:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:44:in `block (2 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:80:in `stats'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:43:in `block in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `public_send'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `dispatch'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/future.rb:18:in `block in initialize'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `block in create'
+2013-07-18T15:15:33Z 3895 TID-23dqew PaperScreenshotWorker JID-d8c52d64bc4ad4084243c688 INFO: start
+2013-07-18T15:15:33Z 3895 TID-23dqew PaperScreenshotWorker JID-d8c52d64bc4ad4084243c688 INFO: fail: 0.514 sec
+2013-07-18T15:15:33Z 3895 TID-23dqew WARN: {"retry"=>true, "queue"=>"default", "class"=>"PaperScreenshotWorker", "args"=>[1], "jid"=>"d8c52d64bc4ad4084243c688", "error_message"=>"Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)\n[>                                                           ] 0%\r[======>                                                     ] 10%\r[============================================================] 100%\rError: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)\n", "error_class"=>"IMGKit::CommandFailedError", "failed_at"=>"2013-07-18T15:12:53Z", "retry_count"=>3, "retried_at"=>2013-07-18 15:15:33 UTC}
+2013-07-18T15:15:33Z 3895 TID-23dqew WARN: Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)
+[>                                                           ] 0%[======>                                                     ] 10%[============================================================] 100%Error: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)
+
+2013-07-18T15:15:33Z 3895 TID-23dqew WARN: /usr/local/rvm/gems/ruby-2.0.0-p247/gems/imgkit-1.3.9/lib/imgkit/imgkit.rb:111:in `to_img'
+/root/release/RollingPaper-Server2/app/workers/paper_screenshot_worker.rb:7:in `perform'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:45:in `block (3 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/timeout.rb:14:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/active_record.rb:6:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/retry_jobs.rb:49:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:11:in `block in call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/logging.rb:22:in `with_context'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:7:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:44:in `block (2 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:80:in `stats'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:43:in `block in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `public_send'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `dispatch'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/future.rb:18:in `block in initialize'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `block in create'
+2013-07-18T15:17:18Z 3895 TID-23dqew PaperScreenshotWorker JID-cf2e0ff9b92f69c3edab815a INFO: start
+2013-07-18T15:17:18Z 3895 TID-23dqew PaperScreenshotWorker JID-cf2e0ff9b92f69c3edab815a INFO: fail: 0.494 sec
+2013-07-18T15:17:18Z 3895 TID-23dqew WARN: {"retry"=>true, "queue"=>"default", "class"=>"PaperScreenshotWorker", "args"=>[1], "jid"=>"cf2e0ff9b92f69c3edab815a", "error_message"=>"Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)\n[>                                                           ] 0%\r[======>                                                     ] 10%\r[============================================================] 100%\rError: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)\n", "error_class"=>"IMGKit::CommandFailedError", "failed_at"=>"2013-07-18T15:13:44Z", "retry_count"=>3, "retried_at"=>2013-07-18 15:17:18 UTC}
+2013-07-18T15:17:18Z 3895 TID-23dqew WARN: Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)
+[>                                                           ] 0%[======>                                                     ] 10%[============================================================] 100%Error: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)
+
+2013-07-18T15:17:18Z 3895 TID-23dqew WARN: /usr/local/rvm/gems/ruby-2.0.0-p247/gems/imgkit-1.3.9/lib/imgkit/imgkit.rb:111:in `to_img'
+/root/release/RollingPaper-Server2/app/workers/paper_screenshot_worker.rb:7:in `perform'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:45:in `block (3 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/timeout.rb:14:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/active_record.rb:6:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/retry_jobs.rb:49:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:11:in `block in call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/logging.rb:22:in `with_context'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:7:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:44:in `block (2 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:80:in `stats'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:43:in `block in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `public_send'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `dispatch'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/future.rb:18:in `block in initialize'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `block in create'
+2013-07-18T15:18:33Z 3895 TID-23dqew PaperScreenshotWorker JID-d8c52d64bc4ad4084243c688 INFO: start
+2013-07-18T15:18:33Z 3895 TID-23dqew PaperScreenshotWorker JID-d8c52d64bc4ad4084243c688 INFO: fail: 0.494 sec
+2013-07-18T15:18:33Z 3895 TID-23dqew WARN: {"retry"=>true, "queue"=>"default", "class"=>"PaperScreenshotWorker", "args"=>[1], "jid"=>"d8c52d64bc4ad4084243c688", "error_message"=>"Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)\n[>                                                           ] 0%\r[======>                                                     ] 10%\r[============================================================] 100%\rError: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)\n", "error_class"=>"IMGKit::CommandFailedError", "failed_at"=>"2013-07-18T15:12:53Z", "retry_count"=>4, "retried_at"=>2013-07-18 15:18:33 UTC}
+2013-07-18T15:18:33Z 3895 TID-23dqew WARN: Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)
+[>                                                           ] 0%[======>                                                     ] 10%[============================================================] 100%Error: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)
+
+2013-07-18T15:18:33Z 3895 TID-23dqew WARN: /usr/local/rvm/gems/ruby-2.0.0-p247/gems/imgkit-1.3.9/lib/imgkit/imgkit.rb:111:in `to_img'
+/root/release/RollingPaper-Server2/app/workers/paper_screenshot_worker.rb:7:in `perform'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:45:in `block (3 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/timeout.rb:14:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/active_record.rb:6:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/retry_jobs.rb:49:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:11:in `block in call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/logging.rb:22:in `with_context'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:7:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:44:in `block (2 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:80:in `stats'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:43:in `block in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `public_send'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `dispatch'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/future.rb:18:in `block in initialize'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `block in create'
+2013-07-18T15:20:19Z 3895 TID-23dqew PaperScreenshotWorker JID-f1bd26d68d6d9a369c392ef4 INFO: start
+2013-07-18T15:20:19Z 3895 TID-23dqew PaperScreenshotWorker JID-f1bd26d68d6d9a369c392ef4 INFO: fail: 0.495 sec
+2013-07-18T15:20:19Z 3895 TID-23dqew WARN: {"retry"=>true, "queue"=>"default", "class"=>"PaperScreenshotWorker", "args"=>[1], "jid"=>"f1bd26d68d6d9a369c392ef4", "error_message"=>"Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)\n[>                                                           ] 0%\r[======>                                                     ] 10%\r[============================================================] 100%\rError: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)\n", "error_class"=>"IMGKit::CommandFailedError", "failed_at"=>2013-07-18 15:20:19 UTC, "retry_count"=>0}
+2013-07-18T15:20:19Z 3895 TID-23dqew WARN: Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)
+[>                                                           ] 0%[======>                                                     ] 10%[============================================================] 100%Error: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)
+
+2013-07-18T15:20:19Z 3895 TID-23dqew WARN: /usr/local/rvm/gems/ruby-2.0.0-p247/gems/imgkit-1.3.9/lib/imgkit/imgkit.rb:111:in `to_img'
+/root/release/RollingPaper-Server2/app/workers/paper_screenshot_worker.rb:7:in `perform'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:45:in `block (3 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/timeout.rb:14:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/active_record.rb:6:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/retry_jobs.rb:49:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:11:in `block in call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/logging.rb:22:in `with_context'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:7:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:44:in `block (2 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:80:in `stats'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:43:in `block in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `public_send'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `dispatch'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/future.rb:18:in `block in initialize'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `block in create'
+2013-07-18T15:20:27Z 3895 TID-23dqew PaperScreenshotWorker JID-8b4c60003cbcccf4466e8bed INFO: start
+2013-07-18T15:20:27Z 3895 TID-23dqew PaperScreenshotWorker JID-8b4c60003cbcccf4466e8bed INFO: fail: 0.496 sec
+2013-07-18T15:20:27Z 3895 TID-23dqew WARN: {"retry"=>true, "queue"=>"default", "class"=>"PaperScreenshotWorker", "args"=>[1], "jid"=>"8b4c60003cbcccf4466e8bed", "error_message"=>"Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)\n[>                                                           ] 0%\r[======>                                                     ] 10%\r[============================================================] 100%\rError: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)\n", "error_class"=>"IMGKit::CommandFailedError", "failed_at"=>2013-07-18 15:20:27 UTC, "retry_count"=>0}
+2013-07-18T15:20:27Z 3895 TID-23dqew WARN: Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)
+[>                                                           ] 0%[======>                                                     ] 10%[============================================================] 100%Error: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)
+
+2013-07-18T15:20:27Z 3895 TID-23dqew WARN: /usr/local/rvm/gems/ruby-2.0.0-p247/gems/imgkit-1.3.9/lib/imgkit/imgkit.rb:111:in `to_img'
+/root/release/RollingPaper-Server2/app/workers/paper_screenshot_worker.rb:7:in `perform'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:45:in `block (3 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/timeout.rb:14:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/active_record.rb:6:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/retry_jobs.rb:49:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:11:in `block in call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/logging.rb:22:in `with_context'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:7:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:44:in `block (2 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:80:in `stats'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:43:in `block in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `public_send'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `dispatch'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/future.rb:18:in `block in initialize'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `block in create'
+2013-07-18T15:20:31Z 3895 TID-23dqew PaperScreenshotWorker JID-9563f28769ded3d2ed7cdfe5 INFO: start
+2013-07-18T15:20:31Z 3895 TID-23dqew PaperScreenshotWorker JID-9563f28769ded3d2ed7cdfe5 INFO: fail: 0.494 sec
+2013-07-18T15:20:31Z 3895 TID-23dqew WARN: {"retry"=>true, "queue"=>"default", "class"=>"PaperScreenshotWorker", "args"=>[1], "jid"=>"9563f28769ded3d2ed7cdfe5", "error_message"=>"Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)\n[>                                                           ] 0%\r[======>                                                     ] 10%\r[============================================================] 100%\rError: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)\n", "error_class"=>"IMGKit::CommandFailedError", "failed_at"=>2013-07-18 15:20:31 UTC, "retry_count"=>0}
+2013-07-18T15:20:31Z 3895 TID-23dqew WARN: Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)
+[>                                                           ] 0%[======>                                                     ] 10%[============================================================] 100%Error: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)
+
+2013-07-18T15:20:31Z 3895 TID-23dqew WARN: /usr/local/rvm/gems/ruby-2.0.0-p247/gems/imgkit-1.3.9/lib/imgkit/imgkit.rb:111:in `to_img'
+/root/release/RollingPaper-Server2/app/workers/paper_screenshot_worker.rb:7:in `perform'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:45:in `block (3 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/timeout.rb:14:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/active_record.rb:6:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/retry_jobs.rb:49:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:11:in `block in call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/logging.rb:22:in `with_context'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:7:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:44:in `block (2 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:80:in `stats'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:43:in `block in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `public_send'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `dispatch'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/future.rb:18:in `block in initialize'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `block in create'
+2013-07-18T15:20:33Z 3895 TID-23dqew PaperScreenshotWorker JID-83979a27de0dacc29d62f8e4 INFO: start
+2013-07-18T15:20:33Z 3895 TID-1dnul2 PaperScreenshotWorker JID-cf2e0ff9b92f69c3edab815a INFO: start
+2013-07-18T15:20:34Z 3895 TID-23dqew PaperScreenshotWorker JID-83979a27de0dacc29d62f8e4 INFO: fail: 0.571 sec
+2013-07-18T15:20:34Z 3895 TID-23dqew WARN: {"retry"=>true, "queue"=>"default", "class"=>"PaperScreenshotWorker", "args"=>[1], "jid"=>"83979a27de0dacc29d62f8e4", "error_message"=>"Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)\n[>                                                           ] 0%\r[======>                                                     ] 10%\r[============================================================] 100%\rError: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)\n", "error_class"=>"IMGKit::CommandFailedError", "failed_at"=>"2013-07-18T15:08:27Z", "retry_count"=>5, "retried_at"=>2013-07-18 15:20:34 UTC}
+2013-07-18T15:20:34Z 3895 TID-23dqew WARN: Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)
+[>                                                           ] 0%[======>                                                     ] 10%[============================================================] 100%Error: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)
+
+2013-07-18T15:20:34Z 3895 TID-23dqew WARN: /usr/local/rvm/gems/ruby-2.0.0-p247/gems/imgkit-1.3.9/lib/imgkit/imgkit.rb:111:in `to_img'
+/root/release/RollingPaper-Server2/app/workers/paper_screenshot_worker.rb:7:in `perform'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:45:in `block (3 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/timeout.rb:14:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/active_record.rb:6:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/retry_jobs.rb:49:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:11:in `block in call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/logging.rb:22:in `with_context'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:7:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:44:in `block (2 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:80:in `stats'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:43:in `block in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `public_send'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `dispatch'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/future.rb:18:in `block in initialize'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `block in create'
+2013-07-18T15:20:34Z 3895 TID-1dnul2 PaperScreenshotWorker JID-cf2e0ff9b92f69c3edab815a INFO: fail: 0.519 sec
+2013-07-18T15:20:34Z 3895 TID-1dnul2 WARN: {"retry"=>true, "queue"=>"default", "class"=>"PaperScreenshotWorker", "args"=>[1], "jid"=>"cf2e0ff9b92f69c3edab815a", "error_message"=>"Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)\n[>                                                           ] 0%\r[======>                                                     ] 10%\r[============================================================] 100%\rError: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)\n", "error_class"=>"IMGKit::CommandFailedError", "failed_at"=>"2013-07-18T15:13:44Z", "retry_count"=>4, "retried_at"=>2013-07-18 15:20:34 UTC}
+2013-07-18T15:20:34Z 3895 TID-1dnul2 WARN: Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)
+[>                                                           ] 0%[======>                                                     ] 10%[============================================================] 100%Error: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)
+
+2013-07-18T15:20:34Z 3895 TID-1dnul2 WARN: /usr/local/rvm/gems/ruby-2.0.0-p247/gems/imgkit-1.3.9/lib/imgkit/imgkit.rb:111:in `to_img'
+/root/release/RollingPaper-Server2/app/workers/paper_screenshot_worker.rb:7:in `perform'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:45:in `block (3 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/timeout.rb:14:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/active_record.rb:6:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/retry_jobs.rb:49:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:11:in `block in call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/logging.rb:22:in `with_context'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:7:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:44:in `block (2 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:80:in `stats'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:43:in `block in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `public_send'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `dispatch'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/future.rb:18:in `block in initialize'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `block in create'
+2013-07-18T15:20:48Z 3895 TID-1dnul2 PaperScreenshotWorker JID-f1bd26d68d6d9a369c392ef4 INFO: start
+2013-07-18T15:20:49Z 3895 TID-1dnul2 PaperScreenshotWorker JID-f1bd26d68d6d9a369c392ef4 INFO: fail: 0.504 sec
+2013-07-18T15:20:49Z 3895 TID-1dnul2 WARN: {"retry"=>true, "queue"=>"default", "class"=>"PaperScreenshotWorker", "args"=>[1], "jid"=>"f1bd26d68d6d9a369c392ef4", "error_message"=>"Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)\n[>                                                           ] 0%\r[======>                                                     ] 10%\r[============================================================] 100%\rError: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)\n", "error_class"=>"IMGKit::CommandFailedError", "failed_at"=>"2013-07-18T15:20:19Z", "retry_count"=>1, "retried_at"=>2013-07-18 15:20:49 UTC}
+2013-07-18T15:20:49Z 3895 TID-1dnul2 WARN: Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)
+[>                                                           ] 0%[======>                                                     ] 10%[============================================================] 100%Error: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)
+
+2013-07-18T15:20:49Z 3895 TID-1dnul2 WARN: /usr/local/rvm/gems/ruby-2.0.0-p247/gems/imgkit-1.3.9/lib/imgkit/imgkit.rb:111:in `to_img'
+/root/release/RollingPaper-Server2/app/workers/paper_screenshot_worker.rb:7:in `perform'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:45:in `block (3 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/timeout.rb:14:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/active_record.rb:6:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/retry_jobs.rb:49:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:11:in `block in call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/logging.rb:22:in `with_context'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:7:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:44:in `block (2 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:80:in `stats'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:43:in `block in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `public_send'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `dispatch'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/future.rb:18:in `block in initialize'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `block in create'
+2013-07-18T15:21:03Z 3895 TID-1dnul2 PaperScreenshotWorker JID-9563f28769ded3d2ed7cdfe5 INFO: start
+2013-07-18T15:21:04Z 3895 TID-1dnul2 PaperScreenshotWorker JID-9563f28769ded3d2ed7cdfe5 INFO: fail: 0.494 sec
+2013-07-18T15:21:04Z 3895 TID-1dnul2 WARN: {"retry"=>true, "queue"=>"default", "class"=>"PaperScreenshotWorker", "args"=>[1], "jid"=>"9563f28769ded3d2ed7cdfe5", "error_message"=>"Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)\n[>                                                           ] 0%\r[======>                                                     ] 10%\r[============================================================] 100%\rError: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)\n", "error_class"=>"IMGKit::CommandFailedError", "failed_at"=>"2013-07-18T15:20:31Z", "retry_count"=>1, "retried_at"=>2013-07-18 15:21:04 UTC}
+2013-07-18T15:21:04Z 3895 TID-1dnul2 WARN: Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)
+[>                                                           ] 0%[======>                                                     ] 10%[============================================================] 100%Error: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)
+
+2013-07-18T15:21:04Z 3895 TID-1dnul2 WARN: /usr/local/rvm/gems/ruby-2.0.0-p247/gems/imgkit-1.3.9/lib/imgkit/imgkit.rb:111:in `to_img'
+/root/release/RollingPaper-Server2/app/workers/paper_screenshot_worker.rb:7:in `perform'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:45:in `block (3 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/timeout.rb:14:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/active_record.rb:6:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/retry_jobs.rb:49:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:11:in `block in call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/logging.rb:22:in `with_context'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:7:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:44:in `block (2 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:80:in `stats'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:43:in `block in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `public_send'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `dispatch'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/future.rb:18:in `block in initialize'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `block in create'
+2013-07-18T15:21:18Z 3895 TID-1dnul2 PaperScreenshotWorker JID-8b4c60003cbcccf4466e8bed INFO: start
+2013-07-18T15:21:19Z 3895 TID-1dnul2 PaperScreenshotWorker JID-8b4c60003cbcccf4466e8bed INFO: fail: 0.494 sec
+2013-07-18T15:21:19Z 3895 TID-1dnul2 WARN: {"retry"=>true, "queue"=>"default", "class"=>"PaperScreenshotWorker", "args"=>[1], "jid"=>"8b4c60003cbcccf4466e8bed", "error_message"=>"Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)\n[>                                                           ] 0%\r[======>                                                     ] 10%\r[============================================================] 100%\rError: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)\n", "error_class"=>"IMGKit::CommandFailedError", "failed_at"=>"2013-07-18T15:20:27Z", "retry_count"=>1, "retried_at"=>2013-07-18 15:21:19 UTC}
+2013-07-18T15:21:19Z 3895 TID-1dnul2 WARN: Command failed: /usr/local/bin/wkhtmltoimage --height 960 --width 1440 --quality 100 --format jpg http://0.0.0.0:3000/papers/1 -: Loading page (1/2)
+[>                                                           ] 0%[======>                                                     ] 10%[============================================================] 100%Error: Failed loading page http://0.0.0.0:3000/papers/1 (sometimes it will work just to ignore this error with --load-error-handling ignore)
+
+2013-07-18T15:21:19Z 3895 TID-1dnul2 WARN: /usr/local/rvm/gems/ruby-2.0.0-p247/gems/imgkit-1.3.9/lib/imgkit/imgkit.rb:111:in `to_img'
+/root/release/RollingPaper-Server2/app/workers/paper_screenshot_worker.rb:7:in `perform'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:45:in `block (3 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:109:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/timeout.rb:14:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/active_record.rb:6:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/retry_jobs.rb:49:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:11:in `block in call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/logging.rb:22:in `with_context'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/server/logging.rb:7:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:111:in `block in invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/middleware/chain.rb:114:in `invoke'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:44:in `block (2 levels) in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:80:in `stats'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/processor.rb:43:in `block in process'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `public_send'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/calls.rb:23:in `dispatch'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/future.rb:18:in `block in initialize'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/celluloid-0.12.4/lib/celluloid/internal_pool.rb:48:in `block in create'
+can't be called from trap context
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/cli.rb:114:in `synchronize'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/cli.rb:114:in `interrupt'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/cli.rb:16:in `block in <top (required)>'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/cli.rb:101:in `call'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/cli.rb:101:in `sleep'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/lib/sidekiq/cli.rb:101:in `run'
+/usr/local/rvm/gems/ruby-2.0.0-p247/gems/sidekiq-2.7.2/bin/sidekiq:8:in `<top (required)>'
+/usr/local/rvm/gems/ruby-2.0.0-p247/bin/sidekiq:19:in `load'
+/usr/local/rvm/gems/ruby-2.0.0-p247/bin/sidekiq:19:in `<main>'
