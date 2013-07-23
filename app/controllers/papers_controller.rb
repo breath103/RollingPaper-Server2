@@ -19,6 +19,8 @@ class PapersController < ApplicationController
     if(@paper && @paper.state != "opened")
       @paper.state = "opened"
       @paper.save!
+    else 
+
     end
     render layout: false
   end 
