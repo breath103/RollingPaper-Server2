@@ -8,34 +8,33 @@
 		<header>
 		</header>
 		<div class="container">
-			<div class="paper-section">
-				<% @me.papers.each { |p| %>
-					<div class='paper' style="background-image:url('<%=p.background%>')" onclick="location.href='/papers/<%=p.id%>'">
-						<div class="title-cover">
-							<%=p.title%>
-						</div>
-					</div>
-				<% } %>
+			<div class="top_bar">
+				<div class="top_in">
+					<div class="logo"></div>
+					<div class="login_id">flowith@naver.com</div>
+					<div class="logout">&nbsp;Logout</div>
+				</div>
 			</div>
-			<div class="paper-section">
-				<% @me.sended_papers.each { |p| %>
-					<div class='paper' style="background-image:url('<%=p.background%>')" onclick="location.href='/papers/<%=p.id%>'">
-						<div class="title-cover">
-							<%=p.title%>
-						</div>
+		
+			<div class="main_bar">
+				<div class="receive_paper">
+					<div class="re_title"></div>
+					<div class="re_content">
+						<div class="contents"></div>
+						<div class="contents"></div>
+						<div class="contents"></div>			
 					</div>
-				<% } %>
-			</div>
-			<div class="paper-section">
-				<% @me.received_papers.each { |p| %>
-					<div class='paper' style="background-image:url('<%=p.background%>')" onclick="location.href='/papers/<%=p.id%>'">
-						<div class="title-cover">
-							<%=p.title%>
-						</div>
+				</div>
+				<div class="send_paper">
+					<div class="se_title"></div>
+					<div class="se_content">
+						<div class="contents"></div>
+						<div class="contents"></div>
+						<div class="contents"></div>
 					</div>
-				<% } %>
+				</div>
 			</div>
-		</div>
+		</div>	
 	</body>
 </html>
 
