@@ -65,7 +65,8 @@ RollingPaper::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   
-  ASSET_HOST = "rollingpaper-production.herokuapp.com"
+#  ASSET_HOST = "rollingpaper-production.herokuapp.com"
+  ASSET_HOST = "210.122.0.119"
   
   Paperclip.options[:command_path] = "/opt/local/bin/"
   
