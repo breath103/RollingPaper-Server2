@@ -8,7 +8,7 @@ RollingPaper::Application.routes.draw do
   mount API => '/api'
   resources :image_contents, path: '/api/image_contents'
   resources :sound_contents, path: '/api/sound_contents'
-#  resources :admin
+  resources :admin
   resources :admin_notifications, path: "/admin/notifications"
   
   get "/" => "users#home"
