@@ -21,14 +21,19 @@ class PaperAPI < Grape::API
       paper_params = params.slice( :creator_id, :title, :width, :height, :notice, :receive_time, :created_time, :friend_facebook_id, :recipient_name, :background );
       paper = Paper.new(paper_params)
       paper.state = "editing"
-      paper.save
 
-      ticket = Ticket.new
-      ticket.user_id = paper.creator_id
-      ticket.paper_id = paper.id
-      ticket.save
-      
-      paper
+      if paper.valid?
+        paper.save
+        
+        ticket = Ticket.new
+        ticket.user_id = paper.creator_id
+        ticket.paper_id = paper.id
+        ticket.save
+        
+        present paper, source: "paper"
+      else
+        error!({ error: paper.errors.full_messages }, 400)
+      end
     end
 
     get '/:id', :rabl => "paper" do 

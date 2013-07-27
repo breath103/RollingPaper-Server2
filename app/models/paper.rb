@@ -11,7 +11,18 @@ class Paper < ActiveRecord::Base
   has_many :tickets, dependent: :destroy
   has_many :invitations
   has_many :participants, source: :user, through: :tickets
+  
+  validates :creator, presence: true
+  validates :title, presence: true, length: { maximum: 128 }
+  validates :notice, length: { maximum: 512 }
+  validates :width, presence: true
+  validates :height, presence: true
+  validates :friend_facebook_id, presence: true
+  validates :receive_time, presence: true
+  validates :background, presence: true
   validates :state, presence: true, inclusion: { in: ["editing", "sended" , "opened"] }
+  validates :recipient_name, presence: true
+  
   after_save :handle_receive_time_changed, :if => :receive_time_changed?
   after_save :handle_state_changed, :if => :state_changed?
 
