@@ -5,6 +5,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require facebook
 
 function Paper (json){	
 }

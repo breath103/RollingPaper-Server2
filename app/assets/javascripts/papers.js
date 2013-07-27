@@ -1,3 +1,10 @@
+//= require jquery
+//= require jquery_ujs
+//= require bootstrap
+//= require application
+//= require facebook
+
+
 function checkFBAuthResponse(response) { 
 	console.log(response);
 	$.post("/users/login",{
@@ -5,23 +12,23 @@ function checkFBAuthResponse(response) {
 	});
 }
 function initFacebook() {
-	FB.init({ appId: '333864290041286', 
-			  status: false, 
-			  cookie: true,
-			   xfbml: true,
-			   oauth: true});
-	FB.getLoginStatus(function(response) {
-		if (response.authResponse && response.authResponse.userID) {
-			checkFBAuthResponse(response);
-		}
-		else {
-			FB.login(function(response){
-				if (response.authResponse) {
-			    	checkFBAuthResponse(response);
-			    }
-			});
-		}
-	});
+    FB.login(function(response) {
+      // handle the response
+	  console.log(response);
+    }, {scope: 'email,user_likes'});
+	
+	// FB.getLoginStatus(function(response) {
+	// 	if (response.authResponse && response.authResponse.userID) {
+	// 		checkFBAuthResponse(response);
+	// 	}
+	// 	else {
+	// 		FB.login(function(response){
+	// 			if (response.authResponse) {
+	// 		    	checkFBAuthResponse(response);
+	// 		    }
+	// 		});
+	// 	}
+	// });
 }	
 function sendFeedback(message){
 	$.post("/api/papers/" + rollingpaper.id + "/feedback",{"feedback" : message},function(response){

@@ -1,0 +1,9 @@
+<h1> Admin Notifications </h1>
+<div>
+	<% @notifications.each { |p| %>
+		<div>
+			<%= p.to_json.html_safe %>
+		</div>
+	<%}%>
+</div>
+	
