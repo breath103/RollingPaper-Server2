@@ -4,7 +4,7 @@ require ::File.expand_path('../config/environment',  __FILE__)
 require 'grape/rabl'
 
 use Rack::Config do |env|
-  env['api.tilt.root'] = 'app/api/views'
+  env['api.tilt.root'] = Rails.root.join('app/api/views')
 end
 
 run RollingPaper::Application
