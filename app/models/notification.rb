@@ -9,7 +9,8 @@ class Notification < ActiveRecord::Base
   validates :notification_type, presence: true, 
             inclusion: { in: ["invitation_accepted", "invitation_received" , 
                               "paper_deadline", "paper_deadline" ,
-                              "paper_received", "paper_opened" ] }
+                              "paper_received", "paper_opened", 
+                              "admin_notification"] }
   
   def send_apn 
     self.recipient.send_push_notification({

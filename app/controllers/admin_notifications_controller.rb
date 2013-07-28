@@ -4,11 +4,17 @@ class AdminNotificationsController < ApplicationController
   end 
   
   def create
-    n = Notification.create(params[:notification])
+    @notification = AdminNotification.new(notification_params)
+    @notification.save
     redirect_to :index
   end
 
   def index
-    @notifications = Notification.all
+    @notifications = AdminNotification.all
   end
+
+  private
+    def notification_params
+      params.require(:admin_notification)
+    end
 end
