@@ -56,7 +56,18 @@ class UserAPI < Grape::API
       user  = User.find_by_id(params[:id])
       paper = Paper.find_by_id(params[:paper_id])
       user.tickets.where("paper_id = #{paper.id}").delete_all
-      if (paper.creator_id = user.id) 
+      if (paper.creator_id == user.id) 
+        paper.participants.each { |u|
+          n = Notification.create({
+            sender: user,
+            recipient: u,
+            notification_type: "paper_deleted",
+            source_id: paper.id,
+            picture: u.picture,
+            text: "#{user.username}님이 #{paper.title} 페이퍼를 삭제하였습니다"
+          })
+          MobileNotificationSender.perform_async(n.id)
+        }
         paper.delete
       end
     end

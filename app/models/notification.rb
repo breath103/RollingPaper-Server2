@@ -8,7 +8,7 @@ class Notification < ActiveRecord::Base
   validates_presence_of :recipient, :notification_type, :picture, :text
   validates :notification_type, presence: true, 
             inclusion: { in: ["invitation_accepted", "invitation_received" , 
-                              "paper_deadline", "paper_deadline" ,
+                              "paper_deadline", "paper_deleted",
                               "paper_received", "paper_opened" ] }
   
   def send_apn 
