@@ -52,6 +52,15 @@ class UserAPI < Grape::API
       user.notifications
     end
     
+    delete '/:id/paper/:paper_id' do 
+      user  = User.find_by_id(params[:id])
+      paper = Paper.find_by_id(params[:paper_id])
+      user.tickets.where("paper_id = #{paper.id}").delete_all
+      if (paper.creator_id = user.id) 
+        paper.delete
+      end
+    end
+    
     get '/:id' do
       User.find_by_id(params[:id])
     end
