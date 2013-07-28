@@ -39,7 +39,17 @@ class PaperAPI < Grape::API
     get '/:id', :rabl => "paper" do 
       @paper = Paper.find_by_id(params[:id])
     end
-            
+    
+    get '/:id/participants' do 
+      paper = Paper.find_by_id(params[:id])
+      present paper.participants, source: "user"
+    end
+    
+    get '/:id/participants' do 
+      paper = Paper.find_by_id(params[:id])
+      present paper.invitations, source: "invitation"
+    end
+
     put '/:id' do
       paper = Paper.find_by_id(params[:id])
       paper_params = params.slice( :creator_id, :title, :width, :height, :notice, :receive_time, :friend_facebook_id, :recipient_name, :background );
