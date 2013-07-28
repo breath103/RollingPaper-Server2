@@ -45,7 +45,7 @@ class PaperAPI < Grape::API
       present paper.participants, source: "user"
     end
     
-    get '/:id/participants' do 
+    get '/:id/invitations' do 
       paper = Paper.find_by_id(params[:id])
       present paper.invitations, source: "invitation"
     end
