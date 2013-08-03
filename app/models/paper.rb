@@ -32,15 +32,7 @@ class Paper < ActiveRecord::Base
       sound: sound_contents
     }
   end
-  
-  def send_feedback_to_participants(feedback)
-    if feedback.kind_of?(String)
-      (participants.each { |u| u.send_push_notification({badge: 0,alert: feedback}) }).length
-    else
-      (participants.each { |u| u.send_push_notification(feedback) }).length
-    end  
-  end
-  
+    
   def web_view_url 
     "http://#{ASSET_HOST}/papers/#{id}"
   end

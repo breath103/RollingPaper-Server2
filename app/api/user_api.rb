@@ -49,7 +49,7 @@ class UserAPI < Grape::API
     
     get '/:id/notifications' do
       user = User.find_by_id(params[:id])
-      user.notifications
+      user.notifications#.order("created_at DESC")
     end
     
     delete '/:id/papers/:paper_id' do 

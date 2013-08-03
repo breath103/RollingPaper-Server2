@@ -10,11 +10,7 @@ class PaperAPI < Grape::API
     end
 
     get '/backgrounds' do
-      [
-        "http://t2.gstatic.com/images?q=tbn:ANd9GcShrXNxT0JaIpDVN7wP_il0dEBo4IBkqdXjChDS8uvL7cWHZV7g",
-        "http://t3.gstatic.com/images?q=tbn:ANd9GcQ_iMlY9xR6v79AwuiGIB0va2cJ8TTpbgTBV3tKzmI8vF1xgyRc",
-        "http://th09.deviantart.net/fs71/200H/i/2011/258/a/3/stone_texture_10___seamless_by_agf81-d49w3l3.jpg"
-      ]
+      Background.all.collect { |b| b.image.url(:original) }
     end
 
     post '/' do

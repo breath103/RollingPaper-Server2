@@ -10,7 +10,6 @@ class Notification < ActiveRecord::Base
             inclusion: { in: ["invitation_accepted", "invitation_received" , 
                               "paper_deadline", "paper_deleted",
                               "paper_received", "paper_opened", "paper_feedback_sended" ] }
-  
   def send_apn 
     self.recipient.send_push_notification({
       badge: self.recipient.notifications.length,
