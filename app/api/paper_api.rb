@@ -59,11 +59,11 @@ class PaperAPI < Grape::API
     end
 
     post '/:id/feedback' do
+      ap params[:id] 
+      ap params[:feedback]
       if params[:id] && params[:feedback]
         paper = Paper.find_by_id(params[:id])
-        paper.send_feedback_to_participants(params[:feedback])
-        # paper.is_feedback_sended = true
-        # paper.save!
+        PaperFeedbackNotificationWorker.perform_async(paper.id, params[:feedback])
       end
     end
     

@@ -4,6 +4,7 @@ RollingPaper::Application.routes.draw do
 
   post "users/login" => "logins#sign_in_with_facebook"
   resources :papers 
+  resources :backgrounds
 
   mount API => '/api'
   resources :image_contents, path: '/api/image_contents'
