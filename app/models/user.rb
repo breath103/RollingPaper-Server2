@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
   end
   
   def sended_papers
-    papers.where("state = 'opened' OR state = 'sended'")
+    papers.where("(state = 'opened' OR state = 'sended') AND (receive_time > ?)",Time.now)
   end
   
   private
