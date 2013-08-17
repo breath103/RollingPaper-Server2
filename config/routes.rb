@@ -2,7 +2,10 @@ require 'sidekiq/web'
 RollingPaper::Application.routes.draw do
   devise_for :admins
 
-  post "users/login" => "logins#sign_in_with_facebook"
+  match 'auth/:provider/callback', to: 'sessions#create'
+  match 'auth/failure', to: redirect('/')
+  match 'signout', to: 'sessions#destroy', as: 'signout'
+  
   resources :papers 
   resources :backgrounds
 

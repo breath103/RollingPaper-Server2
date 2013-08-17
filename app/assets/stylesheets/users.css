@@ -8,50 +8,7 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require bootstrap
  */
-/*
-html, body {
-	width:100%;
-	height:100%;
-}
-
-header {
-	width:100%;
-	height:184px;
-}
-
-.container {
-	width:100%;
-	background-color:rgb(226,226,226);
-}
-
-.paper
-{
-	float:left;
-	border:6px solid #ffffff;
-	margin:50px 50px 50px 50px;
-	width:200px;
-	height:100px;
-	position:relative;
-}
-.paper .title-cover
-{
-	width:100%;
-	height:100%;
-	position:absolute;
-	left:0;
-	top:0;
-	display:none;
-	font : "나눔고딕", 14pt;
-	border:6px solid #97D1B1;
-	background-color:rgba(255,255,255,0.8);
-}
-
-.paper:hover .title-cover
-{
-	display:block;
-}*/
 
 html,body{
 	margin: 0px;
@@ -114,8 +71,9 @@ html,body{
     word-spacing: 2px;
 }
 .receive_paper{
-	width: 67%;
-	margin-left: 17%;
+	width: 1000px;
+	margin-left:auto;
+	margin-right:auto;
 	padding-top: 4%;
 	padding-bottom: 0px;
 }
@@ -130,7 +88,7 @@ html,body{
 	width: 100%; 
 	height: auto; 
 }
-.contents{
+.contents {
 	width: 29%; 
 	height: 180px;
 	display: inline-block;
@@ -140,12 +98,44 @@ html,body{
 	border : 6px solid white;
 	box-shadow: 5px 7px 7px 0px rgba(197, 196, 196, 0.78);
 }
+.contents .cover { 
+	width:100%;
+	height:100%;
+	background-color:rgba(255,255,255,0.7);
+	position:relative;
+	display:none;
+}
+
+.contents .cover h1
+{
+	display:inline-block;
+	margin:10px;
+	color:rgb(90, 90, 90);
+}
+.contents .cover small
+{
+	position:absolute;
+	float:right;
+	bottom:10px;
+	right:10px;
+	font-size:22px;
+	color:rgb(150,150,150);
+}
+
+.contents:hover {
+	border-color:rgb(145,195,160);
+}
+.contents:hover .cover{
+	display:block;
+}
+
 a:hover{
 	color: #97D1B1;
 }
 .send_paper{
-	width: 67%; 
-	margin-left: 17%;
+	width: 1000px;
+	margin-left:auto;
+	margin-right:auto;
 	padding-top: 3%;
 	padding-bottom: 0px;
 }

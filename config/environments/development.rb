@@ -38,7 +38,6 @@ RollingPaper::Application.configure do
   ASSET_HOST = "0.0.0.0:3000"  
   
   Paperclip.options[:command_path] = "/opt/local/bin/"
-    
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
@@ -47,4 +46,8 @@ RollingPaper::Application.configure do
       :secret_access_key => "LBW5yl1N2qoFwj++T9a4+NibmHLL/lcQfupDd8zW"
     }
   }
+  
+  
+  ENV["FACEBOOK_APP_ID"] = "333864290041286"
+  ENV["FACEBOOK_APP_SECRET"] = "0a7e83a01bdeed5741aff7c001070c7e"
 end

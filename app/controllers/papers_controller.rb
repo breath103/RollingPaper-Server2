@@ -1,14 +1,4 @@
 class PapersController < ApplicationController
-  # before_filter :require_login
-  # private
-  #  def require_login
-  #    if session[:current_user_id] 
-  #      ap 
-  #    else
-  #      flash[:error] = "You must be logged in to access this section"
-  #      redirect_to "logins/sign_in"
-  #    end
-  #  end
 
   def index
     @papers = Paper.all

@@ -9,6 +9,16 @@ class User < ActiveRecord::Base
 
   after_create :user_created  
   
+  def self.from_omniauth(auth)
+    #auth.slice(:provider, :uid)
+    where(facebook_id: auth[:uid]).first_or_initialize.tap do |user|
+      user.facebook_id = auth.uid
+      user.username = auth.info.name
+      user.facebook_accesstoken = auth.credentials.token
+      user.save!
+    end
+  end
+  
   def send_push_notification(options = {})
     print "send#{apn_key}"
     if apn_key

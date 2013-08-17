@@ -16,19 +16,6 @@ function initFacebook() {
       // handle the response
 	  console.log(response);
     }, {scope: 'email,user_likes'});
-	
-	// FB.getLoginStatus(function(response) {
-	// 	if (response.authResponse && response.authResponse.userID) {
-	// 		checkFBAuthResponse(response);
-	// 	}
-	// 	else {
-	// 		FB.login(function(response){
-	// 			if (response.authResponse) {
-	// 		    	checkFBAuthResponse(response);
-	// 		    }
-	// 		});
-	// 	}
-	// });
 }	
 function sendFeedback(message){
 	$.post("/api/papers/" + rollingpaper.id + "/feedback",{"feedback" : message},function(response){
@@ -87,23 +74,20 @@ function autoResizeContentsContainer(){
 }
 
 $(function(){
-	initFacebook();
 	$(".sound_content").click(function(){
 		var audio = $( $(this).find("audio")[0] );
-		console.log(audio);
 		audio[0].play();
 	});
 	autoResizeContentsContainer();
-	
 	
 	$(".clear_icon").click(function(){
 		$(".icon_door2").hide();
 		$(".title_container").clearQueue().fadeOut();
 	});
+	
 	setTimeout(function(){
 		$(".title_container").trigger("click");
 	},1000000);
-	
 	
 	$(".under_scroll_left").click(function(){
 		$(".under_list_box").animate({"left": "+=465px"});
@@ -128,11 +112,6 @@ $(function(){
 	});
 
 	var alreadySendMessage = false;
-
-	// var message = prompt("메시지 : ");
-	// $.post("/api/papers/1/feedback",{"feedback" : message},function(response){
-	// 	console.log(arguments);
-	// });
 	
 	// 아직 피드백을 안보냈다면
 	if (!rollingpaper.is_feedback_sended) {
@@ -148,12 +127,4 @@ $(function(){
 			}
 		});
 	}
-	
-	// $(window).bind('beforeunload', function(eventObject) {
-	// 	$("body").fadeOut();
-	// 	if(alreadySendMessage) {
-	// 	} else {
-	// 		return "아직 친구들에게 메시지를 보내지 않으셨습니다";
-	// 	}
-	// });
 });

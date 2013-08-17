@@ -2,17 +2,15 @@
 <html>
 	<head>
 		<title><%=@paper.title%></title>
-  		<%= stylesheet_link_tag    "papers" %>
+  	<%= stylesheet_link_tag    "papers" %>
 		<%= javascript_include_tag "papers" %>
 		<script>
 			rollingpaper = <%= @paper.to_json.html_safe %>;
 		</script>
-		<script type='text/javascript' src='http://connect.facebook.net/en_US/all.js'></script>"
+		<script type='text/javascript' src='http://connect.facebook.net/en_US/all.js'></script>
 	</head>
 	<body onresize="autoResizeContentsContainer();">
-		<div class="Container" >
-			<!-- div class="default"></div-->
-			<!-- background 사이즈를 계산하는 부분을 다시 넣어야한다. 지금은 걍 10퍼센트로 고정-->
+		<div class="Container">
 			<div class="paper_outer" style="background-image:url('<%=@paper.background%>'); background-size:8%">	
 				<div class="icon_door"></div>
 				<div class="icon_door2"></div>

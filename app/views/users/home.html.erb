@@ -1,41 +1,52 @@
-<!DOCTYPE html>
-<html>
-	<head>
-  		<%= stylesheet_link_tag "users" %>
-		<script type='text/javascript' src='http://connect.facebook.net/en_US/all.js'></script>
-		<%= javascript_include_tag "users" %>
-	</head>
-	<body>
-		<div class="container">
-			<div class="top_bar">
-				<div class="top_in">
-					<fb:login-button show-faces="true" width="200" max-rows="1">
-					</fb:login-button>
-					<div class="logo"></div>
-					<div class="login_id">flowith@naver.com</div>
-					<div class="logout">&nbsp;Logout</div>
-				</div>
-			</div>
-		
-			<div class="main_bar">
-				<div class="receive_paper">
-					<div class="re_title"></div>
-					<div class="re_content">
-						<div class="contents"></div>
-						<div class="contents"></div>
-						<div class="contents"></div>			
+<div class="container">
+	<div class="top_bar">
+		<div class="top_in">
+			<div class="logo"></div>
+		  <% if @me %>
+				<div class="login_id"><%= @me.username %></div>
+		    <%= link_to "Sign out", signout_path, id: "sign_out", class: "logout" %>
+		  <% else %>
+		    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+		  <% end %>
+		</div>
+	</div>
+	<div class="main_bar">
+	  <% if @me %>
+		<div class="receive_paper">
+			<div class="re_title"></div>
+			<div class="re_content">
+				<% @me.received_papers.each do |paper| %>
+					<div class="contents" style="background-image:url(<%=paper.background%>)">
+						<div class="cover" onclick="location.href = '<%=paper_path(paper.id)%>'">
+							<h1>
+								<%=paper.title%>
+							</h1>
+							<small><%=paper.receive_time.strftime("%Y.%m.%d")%></small>
+						</div>
 					</div>
-				</div>
-				<div class="send_paper">
-					<div class="se_title"></div>
-					<div class="se_content">
-						<div class="contents"></div>
-						<div class="contents"></div>
-						<div class="contents"></div>
-					</div>
-				</div>
+				<% end %>
 			</div>
-		</div>	
-	</body>
-</html>
+		</div>
+		<div class="send_paper">
+			<div class="se_title"></div>
+			<div class="se_content">
+				<% @me.sended_papers.each do |paper| %>
+					<div class="contents" style="background-image:url(<%=paper.background%>)">
+						<div class="cover" onclick="location.href = '<%=paper_path(paper.id)%>'">
+							<h1>
+								<%=paper.title%>
+							</h1>
+							<small><%=paper.receive_time.strftime("%Y.%m.%d")%></small>
+						</div>
+					</div>
+				<% end %>
+			</div>
+		</div>
+		<% end %>
+	</div>
+</div>
+<%= stylesheet_link_tag "users" %>
+<script type='text/javascript' src='http://connect.facebook.net/en_US/all.js'></script>
+<%= javascript_include_tag "users" %>
+
 

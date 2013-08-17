@@ -25,6 +25,7 @@ group :test, :development do
   gem 'selenium-webdriver'
 end
 
+gem 'omniauth-facebook', '1.4.0'
 gem 'cancan'
 gem 'devise'
 gem "aws-sdk"
@@ -44,18 +45,3 @@ gem 'imgkit', '~> 1.3.7'
 gem 'sidekiq'
 gem 'sinatra', require: false
 gem 'slim'
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'

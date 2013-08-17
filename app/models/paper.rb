@@ -1,7 +1,7 @@
 class Paper < ActiveRecord::Base
   include Paperclip::Glue 
-  attr_accessible :creator_id, :title, :notice, :width, :height, :created_time, :id, :friend_facebook_id, :receive_time, :background  
-  attr_accessible :state, :is_feedback_sended, :recipient_name
+  # attr_accessible :creator_id, :title, :notice, :width, :height, :created_time, :id, :friend_facebook_id, :receive_time, :background  
+  # attr_accessible :state, :is_feedback_sended, :recipient_name
 
   has_attached_file :thumbnail, :styles => {:thumb => '120x120>', :large => '640x480>' }
   
