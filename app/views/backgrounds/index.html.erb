@@ -1,7 +1,6 @@
 <h1>Backgrounds</h1>
 <%@backgrounds.each { |e|%>
 	<div class='bacgkround_thumbnail'>
-		<h3><%=e.name%></h3>
 		<img width='250px' height='250px' src='<%=e.image.url("original")%>'/>
 	</div>
 <%}%>

@@ -6,17 +6,10 @@
 
 
 function checkFBAuthResponse(response) { 
-	console.log(response);
 	$.post("/users/login",{
 		facebook_id : FB.getUserID()
 	});
 }
-function initFacebook() {
-    FB.login(function(response) {
-      // handle the response
-	  console.log(response);
-    }, {scope: 'email,user_likes'});
-}	
 function sendFeedback(message){
 	$.post("/api/papers/" + rollingpaper.id + "/feedback",{"feedback" : message},function(response){
 		alert("전송되었습니다!");

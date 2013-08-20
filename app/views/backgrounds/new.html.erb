@@ -2,7 +2,6 @@
 <div>
 	<h2>create new</h2>
 	<%= form_for @background, :url => {action: "create"}, :html => { :multipart => true } do |f| %>
-		<%= f.text_field :name %>
 		<%= f.file_field :image %>
 		<%= f.submit "Create" %>
 	<% end %>

@@ -47,4 +47,7 @@ RollingPaper::Application.configure do
       :secret_access_key => "LBW5yl1N2qoFwj++T9a4+NibmHLL/lcQfupDd8zW"
     }
   }
+  
+  ENV["FACEBOOK_APP_ID"] = "333864290041286"
+  ENV["FACEBOOK_APP_SECRET"] = "0a7e83a01bdeed5741aff7c001070c7e"
 end
